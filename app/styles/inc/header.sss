@@ -1,33 +1,77 @@
 .header
   background: #fff
-  box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.24)
+  box-shadow: none @md 0 0 5px 0 rgba(0, 0, 0, 0.24)
+  position: fixed 0 0 null 0
+
+  &:after
+    content: ''
+    background: #fff
+    position: absolute 0 0 0 0
+    z-index: -1
+    box-shadow: 0 0 29px 0 rgba(0, 0, 0, 0.24) @md none
 
   &__container
-    position: relative
-    padding-left: @lg 195px
+    position: static @sm relative
+    padding-left: @lg 165px @xl 195px
 
   &__row
     box: center space-between
-    padding: 20px 0
+    padding: 6px 0 4px @md 18px 0 14px @lg 29px 0 20px
+
+  &__menu
+    background: svg-load('icons/menu.svg')
+    size: size('icons/menu.svg')
+    border: 0
+    margin-right: 8vw
+    display: block @md none
+    cursor: pointer
+    outline: 0
 
   &__logo
-    background: resolve('logo.jpg')
-    size: size('logo.jpg')
-    position: absolute 0 auto 0 0
-    margin: auto
+    background: resolve('logo.jpg') no-repeat center / contain
+    size: 48px 40px @md 68px 53px @lg size('logo.jpg')
+    position: static @lg absolute 0 auto 0 0
+    margin: 0 14px 0 0 @lg auto
 
     &-title
-      text: 26px 1 $secondary 500
+      text: 24px 1 $secondary 500 nowrap @md 20px @lg 22px @xl 26px
+      display: none @md block
 
   &__phone
-    text: 30px 1 $secondary 400
+    text: 22px 1 $secondary 500 nowrap @md 22px * 400 @lg 26px @xl 30px
     text-decoration: none
+    margin-left: auto
+
+  &__recall
+    text: nowrap
+    position: relative -3px null null null
+    display: none @md block
+    margin-left: 22px @xl 32px
 
   &__nav
-    box: space-between
-    border-top: 1px solid #f7f7f7
-    padding: 20px 0
+    box: vertical @md horizontal space-between
+    border-top: 0 @md 1px solid #f7f7f7
+    position: absolute 50px null null 0 @md static
+    background: #fff
+    box-shadow: 0 0 29px 0 rgba(0, 0, 0, 0.24) @md none
+    z-index: -1
+    padding: 20px 0 15px 0 @md 0
+    visibility: hidden @md visible
+    transform: translateY(-5px) @md none
+    opacity: 0 @md 1
+    transition: $transition
+    margin-left: 0 @sm -20px @md 0
+
+    &--open
+      visibility: visible
+      transform: translateY(0)
+      opacity: 1
 
     &-link
-      text: 18px 1 #000 500 uppercase
+      text: 15px 1 #000 500 uppercase @lg 17px @xl 18px
       text-decoration: none
+      padding: 10px 50px 10px 20px @md 10px 10px @md 22px 5px @xl 25px 10px
+
+      &:hover, &.active
+        text: #fff
+        background: $secondary
