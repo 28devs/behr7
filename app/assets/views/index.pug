@@ -1,7 +1,30 @@
 include inc/head.pug
 include inc/header.pug
 
-| Start
+.hero
+  .hero__slider
+    .glide
+      .glide__track(data-glide-el='track')
+        .glide__slides
+          .glide__slide.hero__slider-item.hero__slider-item--1
+            .container
+              .hero__slider-title 
+                | Национальная академия HR специалистов 
+                .hero__slider-title-mark BE HR 
+                |  — это...
+
+              .hero__slider-list
+                for item, i in heroSlider1
+                  .hero__slider-list-item
+                    .hero__slider-list-icon(class='hero__slider-list-icon--' + (i + 1))
+                    .hero__slider-list-title!= item.title
+                    .hero__slider-list-text!= item.text
+
+          .glide__slide.hero__slider-item.hero__slider-item--2 2
+          .glide__slide.hero__slider-item.hero__slider-item--3 3
+
+      .glide__bullets(data-glide-el='controls[nav]')
+
 
 include inc/footer.pug
 include inc/foot.pug
