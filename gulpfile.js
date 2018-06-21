@@ -43,6 +43,8 @@
   const processors = [
     require('postcss-import'),
     require('postcss-alias'),
+    require('postcss-for'),
+    require('postcss-each'),
     require('postcss-assets')({
       loadPaths: ['img/', 'img/about', 'img/icons'],
       basePath: 'dest/',

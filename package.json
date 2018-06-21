@@ -10,6 +10,7 @@
     "gulp-concat": "^2.6.1",
     "gulp-debug": "^3.1.0",
     "gulp-if": "^2.0.2",
+    "postcss-each": "^0.10.0",
     "postcss-nested-ancestors": "^2.0.0",
     "postcss-responsive-type": "^1.0.0"
   },
@@ -40,6 +41,7 @@
     "postcss-assets": "^5.0.0",
     "postcss-extend": "^1.0.5",
     "postcss-flexbox": "^1.0.3",
+    "postcss-for": "^2.1.1",
     "postcss-import": "^11.1.0",
     "postcss-inline-media": "^1.0.1",
     "postcss-inline-svg": "^3.1.1",
