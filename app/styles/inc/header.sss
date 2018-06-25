@@ -3,6 +3,17 @@
   box-shadow: none @md 0 0 5px 0 rgba(0, 0, 0, 0.24)
   position: fixed 0 0 null 0
   z-index: 9
+  display: none
+
+  &--scroll-state
+    ^&__row
+      padding: 12px 0 9px
+
+    ^&__nav-link
+      padding: 11px 10px
+
+    ^&__logo
+      height: 87px
 
   &:after
     content: ''

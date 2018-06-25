@@ -23,7 +23,28 @@ include inc/header.pug
               .hero__slider-btn
                 a.btn.btn--large.hero__slider-btn-item(href='#!') Смотреть продукты BEHR
 
-          .glide__slide.hero__slider-item.hero__slider-item--2 2
+          .glide__slide.hero__slider-item.hero__slider-item--2
+            .container
+              .hero__slider-title.hero__slider-title--small
+                | Онлайн курс «<div class="hero__slider-title-mark">HR PRO</div>»
+                .hero__slider-title-mark-small Самый полный и эффективный курс для HR специалистов в СНГ
+
+              .hero__slider-list
+                for item, i in heroSlider2
+                  .hero__slider-list-item.hero__slider-list-item--small
+                    .hero__slider-list-icon.hero__slider-list-icon--small(class='hero__slider-list-icon--' + (i + 5))
+                    .hero__slider-list-title.hero__slider-list-title--small!= item.title
+                    .hero__slider-list-text!= item.text
+
+              .hero__slider-circles
+                for item in heroSlider2_2
+                  .hero__slider-circles-item
+                    .hero__slider-circles-title!= item.title
+                    .hero__slider-circles-text!= item.text
+
+              .hero__slider-btn
+                a.btn.btn--large.hero__slider-btn-item(href='#!') Посмотреть программу курса
+
           .glide__slide.hero__slider-item.hero__slider-item--3 3
 
       .glide__bullets(data-glide-el='controls[nav]')
