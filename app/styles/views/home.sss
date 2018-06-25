@@ -2,6 +2,10 @@
 
   &__slider
 
+    .container
+      box: vertical space-between
+      height: 100%
+
     &-item
       padding: 25px 0 @md 30px 0
       height: auto
@@ -28,6 +32,7 @@
 
     &-list
       box: top space-between wrap
+      margin-top: 20px @xl 0
 
       &-item
         width: 47% @lg 22%
@@ -98,16 +103,20 @@
       &-item
         display: block @md inline-block
         margin: 0 auto
-        max-width: 100% @sm 80%
+        max-width: 100%
+        white-space: nowrap
 
     &-circles
       border-top: 2px solid #cccccc
       padding: 20px 0 0 0
       margin-top: 20px @md 40px @xl 20px
       box: center middle
+      flex-wrap: wrap @sm nowrap
+      text-align: center
+      white-space: nowrap
 
       &-item
-        size: 130px
+        size: 30% 70px @md 130px
         border: 0 @md 1px solid #093c57
         border-radius: 50%
         box: vertical center middle
@@ -125,6 +134,44 @@
 
       &-text
         text: 15px * 400 @md 16px @lg 18px
+
+    &-cert
+      box: vertical center @md horizontal
+      margin: 20px 0 @lg 55px 0
+
+      &-item
+        box-shadow: 0 3px 8px 0 rgba(0, 0, 0, 0.2)
+        display: block
+        max-width: 300px @md 390px @lg 490px @xl 590px
+        width: 100%
+        margin-bottom: 50px @sm 20px
+
+      &-list
+        margin-left: 60px @lg 80px
+        position: relative
+
+        &:before
+          content: ''
+          border-left: 1px #093c57 dashed
+          position: absolute 16px null 16px 12px
+          z-index: 1
+
+        &-item
+          box: center
+          text: #484848 16px 1 500 @md 20px @lg 24px
+
+          &:before
+            content: ''
+            display: inline-block
+            size: 25px
+            min-width: 25px
+            border-radius: 25px
+            background: #093c57 svg-load('icons/ok.svg') no-repeat center
+            margin-right: 20px
+            z-index: 2
+
+          & + &
+            margin-top: 15px @md 31px @lg 41px
 
 .glide
   &__bullets
