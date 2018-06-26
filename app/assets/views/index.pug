@@ -62,7 +62,32 @@ include inc/header.pug
 
       .glide__bullets(data-glide-el='controls[nav]')
 
-    
+
+section.schedule
+  .schedule__container.container.container--full-sm
+    h2.schedule__title.h2 
+      .title-mark.title-mark--white Расписание
+
+    .schedule__slider
+      .glide
+        .glide__track(data-glide-el='track')
+          .glide__slides
+            for item in schedule
+              .glide__slide
+                .schedule__card
+                  .schedule__card-img
+                    img.schedule__card-img-item(src='img/img-1.jpg')
+                  .schedule__card-title= item.title
+                  .schedule__card-body
+                    .icon-text.icon-text--location= item.location
+                    .icon-text.icon-text--calendar= item.time
+
+                    .schedule__card-btn
+                      a.schedule__card-btn-item.btn(href='#!') Программа
+
+          .schedule__slider-arrows(data-glide-el='controls')
+            button.schedule__slider-arrows-item.schedule__slider-arrows-item--prev(data-glide-dir='<')
+            button.schedule__slider-arrows-item.schedule__slider-arrows-item--next(data-glide-dir='>')
 
 
 include inc/footer.pug

@@ -55,8 +55,7 @@ const heroSlider = document.querySelector('.hero__slider .glide');
 if (heroSlider) {
   const heroSliderG = new Glide(heroSlider, {
     perView: 1,
-    gap: 0,
-    startAt: 2
+    gap: 0
   });
 
   heroSliderG.on('move', function() {
@@ -72,4 +71,24 @@ if (heroSlider) {
   });
 
   heroSliderG.mount();
+}
+
+//
+// Schedule slider
+//
+
+const scheduleSlider = document.querySelector('.schedule__slider .glide');
+
+if (scheduleSlider) {
+  const scheduleSliderG = new Glide(scheduleSlider, {
+    type: 'carousel',
+    perView: 4,
+    gap: 21,
+    breakpoints: {
+      385: { perView: 1, peek: 10 },
+      580: { perView: 1, peek: 50 },
+      991: { perView: 2, peek: 0 },
+      1200: { perView: 3 }
+    }
+  }).mount();
 }
