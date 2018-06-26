@@ -1,3 +1,42 @@
 body
   text: 16PX 1.5 #000 300
   font-family: $font
+
+.h2
+  text: #000 300 26px 1 @md 32px
+
+.title-mark
+  display: inline-block
+  position: relative
+
+  &:after
+    content: ''
+    display: block
+    position: absolute null 0 -13px 0
+    height: 3px @md 5px
+    border-radius: 5px
+    background: $primary
+
+  &--white:after
+    background: #fff
+
+.icon-text
+  text: 15px 1
+  box: center
+  
+  & + &
+    margin-top: 12px
+
+  &:before
+    content: ''
+    display: block
+    background-repeat: no-repeat
+
+  &--location:before
+    background-position: 1px 0
+
+  @each $icon in location, calendar
+    &--$icon:before
+      background-image: svg-load('icons/$icon.svg')
+      size: 28px height('icons/$icon.svg')
+      min-width: 28px
