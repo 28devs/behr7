@@ -55,7 +55,8 @@ const heroSlider = document.querySelector('.hero__slider .glide');
 if (heroSlider) {
   const heroSliderG = new Glide(heroSlider, {
     perView: 1,
-    gap: 0
+    gap: 0,
+    startAt: 2
   });
 
   heroSliderG.on('move', function() {

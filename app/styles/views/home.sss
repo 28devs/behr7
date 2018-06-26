@@ -2,8 +2,13 @@
 
   &__slider
 
+    .container
+      box: vertical space-between
+      height: 100%
+
     &-item
       padding: 25px 0 @md 30px 0
+      height: auto
 
       @for $i from 1 to 3
         &--$i
@@ -13,17 +18,31 @@
       text: $secondary center 22px 1.2 bold @md 40px 1.3 @lg 50px 1.5
       margin-bottom: 0 @md 50px @lg 30px
 
+      &--small
+        text: 23px @md 33px @lg 35px
+        margin-bottom: 10px @md -5px @lg -15px
+
       &-mark
         display: inline-block
         text: $primary
 
+        &-small
+          text: 16px * 500 @md 22px @lg 25px
+          margin: 5px 0 @md 0
+
     &-list
       box: top space-between wrap
+      margin-top: 20px @xl 0
 
       &-item
         width: 47% @lg 22%
         text: center @md left @lg center
         font-family: 'Fira Sans', sans-serif
+
+        &--small
+          width: 47% @sm 33% @lg 33%
+          text: center @md center @lg left
+          font-family: 'Roboto', sans-serif
 
       &-icon
         size: 75px @md 115px @lg 155px
@@ -33,9 +52,6 @@
         margin-bottom: 0 @md 60px @lg 0
         margin-top: 30px @md 0
         float: none @md left @lg none
-
-        &--small
-          size: 110px
 
         @each $color, $i in 0, #dc6231, #2692b1, #f4db81, #32aa8f, #1c8696, #fdba2f, #01c6da, #d35c2b, #f4da80, #093c57
           &--$i
@@ -50,11 +66,26 @@
           &--$i:before
             background: resolve('hero/icon-$i.png') center / contain
             size: calc(100% + 10px)
+
+        &--small
+          size: 50px @md 80px @lg 100px @xl 110px
+          float: none @md none @lg left
+          margin-top: 15px @md 20px @lg 30px
+          margin-right: auto @md auto @lg 20px
+          margin-bottom: 0 @md 0 @lg 0
+
+          &:before
+            position: relative -12px null null -7px
+            size: calc(100% + 12px)
           
 
       &-title
         text: 22px 1 @md 25px @lg 30px
         margin: 10px 0 @md -5px 0 15px @lg 30px 0 20px
+
+        &--small
+          text: 16px 1 500 @md 20px @lg 20px @xl 22px
+          margin: 10px 0 @md 10px 0 15px @lg 60px 0 0
         
       &-text
         text: 15px 1.2 @md 19px @lg 23px
@@ -72,7 +103,75 @@
       &-item
         display: block @md inline-block
         margin: 0 auto
-        max-width: 100% @sm 80%
+        max-width: 100%
+        white-space: nowrap
+
+    &-circles
+      border-top: 2px solid #cccccc
+      padding: 20px 0 0 0
+      margin-top: 20px @md 40px @xl 20px
+      box: center middle
+      flex-wrap: wrap @sm nowrap
+      text-align: center
+      white-space: nowrap
+
+      &-item
+        size: 30% 70px @md 130px
+        border: 0 @md 1px solid #093c57
+        border-radius: 50%
+        box: vertical center middle
+
+        & + &
+          margin-left: 10px @lg 30px
+
+      &-title
+        text: $primary 25px 1 500 @md 30px @lg 40px
+
+        &-small
+          text: #000 14px * 400 @md 16px @lg 18px
+          display: inline-block
+          margin-left: 3px
+
+      &-text
+        text: 15px * 400 @md 16px @lg 18px
+
+    &-cert
+      box: vertical center @md horizontal
+      margin: 20px 0 @lg 55px 0
+
+      &-item
+        box-shadow: 0 3px 8px 0 rgba(0, 0, 0, 0.2)
+        display: block
+        max-width: 300px @md 390px @lg 490px @xl 590px
+        width: 100%
+        margin-bottom: 50px @sm 20px
+
+      &-list
+        margin-left: 60px @lg 80px
+        position: relative
+
+        &:before
+          content: ''
+          border-left: 1px #093c57 dashed
+          position: absolute 16px null 16px 12px
+          z-index: 1
+
+        &-item
+          box: center
+          text: #484848 16px 1 500 @md 20px @lg 24px
+
+          &:before
+            content: ''
+            display: inline-block
+            size: 25px
+            min-width: 25px
+            border-radius: 25px
+            background: #093c57 svg-load('icons/ok.svg') no-repeat center
+            margin-right: 20px
+            z-index: 2
+
+          & + &
+            margin-top: 15px @md 31px @lg 41px
 
 .glide
   &__bullets
