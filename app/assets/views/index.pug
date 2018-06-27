@@ -90,5 +90,19 @@ section.schedule
             button.schedule__slider-arrows-item.schedule__slider-arrows-item--next(data-glide-dir='>')
 
 
+section.partners
+  .container
+    h2.partners__title.h2
+      | Наши
+      .title-mark партнеры
+    
+    .partners__list
+      for i in [1,2,3,4,5,6,7,8,9,10,11,12]
+        .partners__list-item
+          img.partners__list-item-img(src='img/partners/' + i + '.png')
+
+    .partners__btn
+      a.btn.btn--medium.btn--arrow(href='#!') Станьте нашим партнером
+
 include inc/footer.pug
 include inc/foot.pug
