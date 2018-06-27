@@ -66,7 +66,7 @@ include inc/header.pug
 section.schedule
   .schedule__container.container.container--full-sm
     h2.schedule__title.h2 
-      .title-mark.title-mark--white Расписание
+      a.title-mark.title-mark--white(href='#!') Расписание
 
     .schedule__slider
       .glide
@@ -93,8 +93,8 @@ section.schedule
 section.partners
   .container
     h2.partners__title.h2
-      | Наши
-      .title-mark партнеры
+      | Наши 
+      a.title-mark(href='#!') партнеры
     
     .partners__list
       for i in [1,2,3,4,5,6,7,8,9,10,11,12]
@@ -103,6 +103,38 @@ section.partners
 
     .partners__btn
       a.btn.btn--medium.btn--arrow(href='#!') Станьте нашим партнером
+
+
+section.blog-new
+  .container
+    h2.blog-new__title.h2
+      | Новое в  
+      a.title-mark(href='#!') блоге
+
+    .row.no-gutters
+      .col-12.col-lg-6
+        for item in blogNew
+          a.blog-new__article(href='#!')
+            img.blog-new__article-img(src='img/img-2.jpg')
+            .blog-new__article-title= item.title
+            .blog-new__article-text= item.text
+            .blog-new__article-date= item.date
+            .blog-new__article-read Читать
+
+      .col-12.col-lg-6
+        .blog-new__action
+          .blog-new__action-title Получите доступ к материалам Базы Знаний профессионалов HR бесплатно!
+
+          form.form.blog-new__action-form(action='#!')
+            .input-group
+              input.input-group__item(type='text' name='name' placeholder='Имя')
+            
+            .input-group
+              input.input-group__item(type='text' name='name' placeholder='E-mail')
+
+            .input-group
+              button.blog-new__action-btn.btn.btn--medium.btn--arrow Получить бесценный контент
+
 
 include inc/footer.pug
 include inc/foot.pug

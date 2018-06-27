@@ -92,3 +92,17 @@ if (scheduleSlider) {
     }
   }).mount();
 }
+
+//
+// Action block on mobile
+//
+
+const actionBlock = document.querySelector('.blog-new__action');
+
+if (actionBlock) {
+  const blogNew = document.querySelector('.blog-new');
+  const newActionBlock = actionBlock.cloneNode(true);
+
+  newActionBlock.classList.add('blog-new__action--mobile');
+  blogNew.insertBefore(newActionBlock, blogNew.children[0]);
+}
