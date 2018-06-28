@@ -1,9 +1,14 @@
 include inc/head.pug
 include inc/header.pug
 
-.experts
-  //- each data in experts
-  //-   +experts(data)
+section.experts
+  h1 Наши эксперты
+  .container
+
+    .row
+      each data in experts
+        .col-4.col-md-4.col-lg-4
+          +experts(data)
 
 include inc/footer.pug
 include inc/foot.pug
