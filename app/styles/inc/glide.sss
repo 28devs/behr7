@@ -1,0 +1,23 @@
+.glide
+  
+  &__arrows
+    box: middle
+    margin-top: 30px
+
+    &-item
+      background: svg-load('icons/arrow.svg' fill='#fff')
+      size: size('icons/arrow.svg')
+      border: 0
+      opacity: .4
+      cursor: pointer
+      outline: 0
+      transition: $transition
+      
+      & + &
+        margin-left: 85px
+
+      &:hover
+        opacity: 1
+
+      &--prev
+        transform: scale(-1)
