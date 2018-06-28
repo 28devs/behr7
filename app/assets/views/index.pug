@@ -85,9 +85,9 @@ section.schedule
                     .schedule__card-btn
                       a.schedule__card-btn-item.btn(href='#!') Программа
 
-          .schedule__slider-arrows(data-glide-el='controls')
-            button.schedule__slider-arrows-item.schedule__slider-arrows-item--prev(data-glide-dir='<')
-            button.schedule__slider-arrows-item.schedule__slider-arrows-item--next(data-glide-dir='>')
+          .glide__arrows(data-glide-el='controls')
+            button.glide__arrows-item.glide__arrows-item--prev(data-glide-dir='<')
+            button.glide__arrows-item.glide__arrows-item--next(data-glide-dir='>')
 
 
 section.partners
@@ -135,6 +135,12 @@ section.blog-new
             .input-group
               button.blog-new__action-btn.btn.btn--medium.btn--arrow Получить бесценный контент
 
+
+section.reviews
+  .container
+    h2.reviews__title.h2
+      a.title-mark(href='#!') Отзывы
+      |  об Академии 
 
 include inc/footer.pug
 include inc/foot.pug
