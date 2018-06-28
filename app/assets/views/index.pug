@@ -142,5 +142,29 @@ section.reviews
       a.title-mark(href='#!') Отзывы
       |  об Академии 
 
+    .reviews__slider
+      .glide
+        .glide__track(data-glide-el='track')
+          .glide__slides
+            for item in reviews
+              .glide__slide
+                .reviews__card
+                  .reviews__card-img
+                    img.reviews__card-img-item(src='img/home/review-1.jpg')
+                  .reviews__card-title= item.title
+                  .reviews__card-desc= item.desc
+                  a.reviews__card-link(href='#!')= item.link
+
+                  .reviews__card-body
+                    .reviews__card-text= item.text
+
+                    .reviews__card-video
+                      img.reviews__card-video-item(src='img/home/video-1.jpg')
+
+          .glide__arrows(data-glide-el='controls')
+            button.glide__arrows-item.glide__arrows-item--dark.glide__arrows-item--prev(data-glide-dir='<')
+            button.glide__arrows-item.glide__arrows-item--dark.glide__arrows-item--next(data-glide-dir='>')
+
+
 include inc/footer.pug
 include inc/foot.pug

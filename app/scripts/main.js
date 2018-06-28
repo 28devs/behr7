@@ -106,3 +106,23 @@ if (actionBlock) {
   newActionBlock.classList.add('blog-new__action--mobile');
   blogNew.insertBefore(newActionBlock, blogNew.children[0]);
 }
+
+//
+// Reviews slider
+//
+
+const reviewsSlider = document.querySelector('.reviews__slider .glide');
+
+if (reviewsSlider) {
+  const reviewsSliderG = new Glide(reviewsSlider, {
+    type: 'carousel',
+    perView: 2,
+    gap: 20,
+    breakpoints: {
+      385: { perView: 1, peek: 0 },
+      580: { perView: 1, peek: 0 },
+      991: { perView: 1, peek: 0 },
+      1200: { perView: 2 }
+    }
+  }).mount();
+}
