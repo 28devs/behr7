@@ -1,0 +1,38 @@
+mixin footer()
+  footer.footer
+    .container
+      .row
+        .col-12.col-lg-6
+          .footer__title Будем на связи
+
+          ul.footer__list
+            li.footer__list-item.footer__list-item--phone
+              a.footer__list-item-link(href='tel:88005555555') 8 (800) 555-55-55
+
+            li.footer__list-item.footer__list-item--email
+              a.footer__list-item-link(href='mailto:mail@behr.ru') mail@behr.ru
+
+            li.footer__list-item.footer__list-item--location Россия, г.Москва,  Ленинский проспект, д.41, 5 этаж, офис 512 (м. Площадь Гагарина)
+
+            li.footer__list-item.footer__list-item--clock 
+              | Пн-Пт: 09:00 – 18:00
+              | Сб: 11:00 – 15:00
+              | Вс: Выходной
+
+
+
+        .col-12.col-lg-6
+          .footer__title Напишите нами:
+
+          form.form.form--squared.footer__form(action='#!')          
+          .input-group
+            input.input-group__item(type='text' name='name' placeholder='Имя')
+
+          .input-group
+            input.input-group__item(type='text' name='name' placeholder='Телефон')
+          
+          .input-group
+            textarea.input-group__item(type='text' name='name' placeholder='Ваше сообщение')
+
+          .input-group
+            button.footer__btn.btn.btn--medium.btn--arrow Отправить сообщение

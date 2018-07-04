@@ -189,5 +189,21 @@ section.last
           .last__cert-item
             img.last__cert-item-img(src='img/home/cert-2.jpg')
 
+section.call-action
+  .container
+    form.form.call-action__form(action='#!')
+      .call-action__title Помочь с выбором?
+      
+      .input-group
+        input.input-group__item(type='text' name='name' placeholder='Ваше имя')
+      
+      .input-group
+        input.input-group__item(type='text' name='name' placeholder='E-mail')
+
+      .input-group
+        button.call-action__btn.btn.btn--medium.btn--arrow Подобрать тренинг
+
+
 include inc/footer.pug
++footer
 include inc/foot.pug
