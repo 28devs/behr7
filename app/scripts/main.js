@@ -169,8 +169,7 @@ if (gallerySlider) {
                 after: 30,
                 before: 0
               }
-            },
-            1200: { perView: 2 }
+            }
           }
         }).mount();
       }
