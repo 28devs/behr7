@@ -1,7 +1,7 @@
 mixin experts(data)
   .expert
     .expert__img-wrap 
-      img.expert__img(src="", alt="")
-    .expert__name data.name 
-    .expert__desc data.desc
-    a.expert__link Подробнее
+      img.expert__img(src='img/experts/avatar-' +data.item+ '.jpg', alt="")
+    .expert__name= data.name 
+    .expert__desc= data.desc
+    a.expert__link= Подробнее
