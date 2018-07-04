@@ -165,6 +165,29 @@ section.reviews
             button.glide__arrows-item.glide__arrows-item--dark.glide__arrows-item--prev(data-glide-dir='<')
             button.glide__arrows-item.glide__arrows-item--dark.glide__arrows-item--next(data-glide-dir='>')
 
+section.last
+  .container
+    .row
+      .col-12.col-lg-6
+        .last__title Фото мероприятий
+        .last__gallery
+          .glide
+            .glide__track(data-glide-el='track')
+              .glide__slides
+                .last__gallery-item(style='background-image: url(img/home/gallery-1.jpg)')
+                .last__gallery-item(style='background-image: url(img/home/gallery-2.jpg)')
+                .last__gallery-item(style='background-image: url(img/home/gallery-3.jpg)')
+                .last__gallery-item(style='background-image: url(img/home/gallery-4.jpg)')
+                .last__gallery-item(style='background-image: url(img/home/gallery-5.jpg)')
+                .last__gallery-item(style='background-image: url(img/home/gallery-6.jpg)')
+ 
+      .col-12.col-lg-6
+        .last__title Сертификаты
+        .last__cert
+          .last__cert-item
+            img.last__cert-item-img(src='img/home/cert-1.jpg')
+          .last__cert-item
+            img.last__cert-item-img(src='img/home/cert-2.jpg')
 
 include inc/footer.pug
 include inc/foot.pug

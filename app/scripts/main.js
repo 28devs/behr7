@@ -80,7 +80,7 @@ if (heroSlider) {
 const scheduleSlider = document.querySelector('.schedule__slider .glide');
 
 if (scheduleSlider) {
-  const scheduleSliderG = new Glide(scheduleSlider, {
+  const scheduleSliderOpt = {
     type: 'carousel',
     perView: 4,
     gap: 21,
@@ -90,7 +90,8 @@ if (scheduleSlider) {
       991: { perView: 2, peek: 0 },
       1200: { perView: 3 }
     }
-  }).mount();
+  };
+  const scheduleSliderG = new Glide(scheduleSlider, scheduleSliderOpt).mount();
 }
 
 //
@@ -114,7 +115,7 @@ if (actionBlock) {
 const reviewsSlider = document.querySelector('.reviews__slider .glide');
 
 if (reviewsSlider) {
-  const reviewsSliderG = new Glide(reviewsSlider, {
+  const reviewsSliderOpt = {
     type: 'carousel',
     perView: 2,
     gap: 20,
@@ -124,5 +125,64 @@ if (reviewsSlider) {
       991: { perView: 1, peek: 0 },
       1200: { perView: 2 }
     }
-  }).mount();
+  };
+  const reviewsSliderG = new Glide(reviewsSlider, reviewsSliderOpt).mount();
+}
+
+//
+// Home gallery slider
+//
+
+const gallerySlider = document.querySelector('.last__gallery .glide');
+
+if (gallerySlider) {
+  var gallerySliderInit = false;
+
+  const gallerySliderFn = function() {
+    if (window.innerWidth < 768) {
+      if (!gallerySliderInit) {
+        gallerySliderInit = new Glide(gallerySlider, {
+          perView: 1,
+          gap: 10,
+          peek: {
+            after: 30,
+            before: 0
+          },
+          breakpoints: {
+            385: {
+              perView: 1,
+              peek: {
+                after: 30,
+                before: 0
+              }
+            },
+            580: {
+              perView: 1,
+              peek: {
+                after: 30,
+                before: 0
+              }
+            },
+            991: {
+              perView: 1,
+              peek: {
+                after: 30,
+                before: 0
+              }
+            },
+            1200: { perView: 2 }
+          }
+        }).mount();
+      }
+    } else {
+      // destroy slider if init
+      if (typeof gallerySliderInit === 'object') {
+        gallerySliderInit.destroy();
+        gallerySliderInit = false;
+      }
+    }
+  };
+
+  gallerySliderFn();
+  window.addEventListener('resize', gallerySliderFn);
 }
