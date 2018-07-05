@@ -90,6 +90,26 @@ section.schedule
             button.glide__arrows-item.glide__arrows-item--next(data-glide-dir='>')
 
 
+section.experts.experts--slider
+  .container.container--full-sm
+    h1.experts__title.h1 
+      .title-mark Наши эксперты
+
+    .experts__slider
+      .glide
+        .glide__track(data-glide-el='track')
+          .glide__slides
+            each data in experts
+              .glide__slide
+                +experts(data, true)
+
+        .glide__arrows.glide__arrows--side(data-glide-el='controls')
+          button.glide__arrows-item.glide__arrows-item--prev.glide__arrows-item--gray(data-glide-dir='<')
+          button.glide__arrows-item.glide__arrows-item--next.glide__arrows-item--gray(data-glide-dir='>')
+
+    .experts__btn-wrap
+      a.experts__btn.btn.btn--medium.btn--arrow(href="!#") Стать экспертом академии
+
 section.partners
   .container
     h2.partners__title.h2
