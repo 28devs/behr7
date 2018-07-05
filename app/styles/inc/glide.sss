@@ -4,6 +4,13 @@
     box: middle
     margin-top: 30px
 
+    &--side
+      position: static @xl absolute 0 -40px null -40px
+      box: middle @xl space-between
+
+      ^&-item
+        margin-top: -43px @md -54px @xl 73px
+
     &-item
       background: svg-load('icons/arrow.svg' fill='#fff')
       size: size('icons/arrow.svg')
@@ -15,6 +22,11 @@
 
       &--dark
         background: svg-load('icons/arrow.svg' fill='#8c97a0')
+
+      &--gray
+        background: svg-load('icons/arrow-short.svg' fill='#8c97a0') no-repeat center / contain
+        size: 22px @md 20px 30px
+        opacity: .6
       
       & + &
         margin-left: 85px
