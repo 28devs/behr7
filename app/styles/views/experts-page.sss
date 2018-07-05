@@ -1,12 +1,16 @@
 .experts
 
   & .expert
-    margin-bottom: 60px
+    margin-bottom: 30px @md 46px @lg 60px
     
   &__title
     text-align: center
-    margin: 70px 0 67px
+    margin: 42px 0 @md 44px 0 @lg 70px 0 67px
 
-  &__btn
+  &__btn-wrap
     text-align: center
     padding: 0 0 60px
+
+  &__btn
+    width: 100% @md initial
+    box-sizing: border-box
