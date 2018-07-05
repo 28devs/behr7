@@ -1,0 +1,111 @@
+.footer
+  
+  &__up
+    padding: 30px 0 40px
+    background: #f2f2f2
+
+  &__title
+    text: center #000 500 22px @lg left
+    margin-bottom: 20px
+
+    &--second
+      margin-top: 25px @lg 0
+      margin-bottom: 0
+
+  &__list
+    display: block
+    text: #262626 15px @md 17px
+
+    &-item
+      padding-left: 40px
+      position: relative
+      
+      & + &
+        margin-top: 20px
+
+      &-link
+        text: #0349a7 15px @md 17px
+
+      &-spacer
+        display: inline-block
+        padding-left: 27px
+
+        &-val
+          display: inline-block
+          padding-left: 10px
+
+      &:before
+        content: ''
+        display: block
+
+      @each $i in phone, email, location-2, clock
+        &--$i
+          &:before
+            position: absolute null null null 0
+            top: 2px @md 4px 
+            background: svg-load('icons/$i.svg') no-repeat left / contain
+            size: 20px
+
+      &--phone
+        &:before
+          top: 7px
+
+        ^&-link
+          text: #262626 24px 
+          text-decoration: none
+
+
+  &__btn
+    margin-left: auto
+
+  &__down
+    background: #1e2f56
+    padding: 0 0 20px @md 10px 0 30px @lg 39px 0 42px
+    border-top: 5px $primary solid
+
+    &-container
+      box: middle center wrap @lg space-between
+
+  &__logo
+    background: resolve('icons/logo.png')
+    size: 67px 54px
+    display: none @xl block
+
+    &:hover
+      background-position-y: 100%
+
+  &__nav
+    margin-top: 20px
+    display: none @sm flex
+    justify-content: space-between
+    width: 100% @lg auto
+    border-bottom: 1px solid #2d416f @lg 0
+    padding-bottom: 17px @lg 0
+
+    &-link
+      text: #fff 500 14px none @md 16px
+
+      &:hover
+        text: underline
+
+      & + &
+        margin-left: 0 @lg 29px
+
+  &__social
+    box: center
+    margin-top: 20px
+
+    &-link
+      display: block
+      transition: $transition
+
+      & + &
+        margin-left: 14px
+
+      @each $i in vk, fb, st, yt
+        &--$i
+          background: svg-load('icons/$i.svg' fill='#fff') center / cover
+          size: 34px
+
+          &:hover
+            background: svg-load('icons/$i.svg' fill=$primary) center / cover

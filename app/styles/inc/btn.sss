@@ -40,10 +40,18 @@
     &:after
       content: ''
       display: inline-block
-      margin-left: 5px @md 20px
+      margin-left: 5px @md 11px
       background: svg-load('icons/arrow-short.svg') no-repeat center / contain
       size: 8px 11px @sm size('icons/arrow-short.svg')
       transition: $transition
 
     &:hover:after
       transform: translateX(3px)
+
+  &--simple
+    margin: 0
+    padding: 18px 28px 17px 
+    border-radius: 5px
+
+    &:before
+      display: none
