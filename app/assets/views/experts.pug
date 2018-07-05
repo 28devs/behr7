@@ -2,13 +2,16 @@ include inc/head.pug
 include inc/header.pug
 
 section.experts
-  h1 Наши эксперты
   .container
+    h1.experts__title.h1 Наши эксперты
 
     .row
       each data in experts
-        .col-4.col-md-4.col-lg-4
-          +experts(data)
+        .col-6.col-md-4
+          +experts(data, true)
+
+    .experts__btn
+      a.btn.btn--medium.btn--arrow(href="!#") Стать экспертом академии
 
 include inc/footer.pug
 include inc/foot.pug

@@ -47,3 +47,29 @@
 
     &:hover:after
       transform: translateX(3px)
+
+  &--arrow-long
+    &:after
+      margin-left: 10px @md 30px
+      display: none @sm inline-block
+      background: svg-load('icons/arrow-outline.svg' fill: #1b987a) no-repeat center / contain
+      size: 13px 17px @sm size('icons/arrow-outline.svg')
+      position: relative
+      top: 1px
+
+    &:hover:after
+      background: svg-load('icons/arrow-outline.svg' fill: #fff) no-repeat top / contain
+
+  &--outline
+    background-color: transparent
+    color: #1b987a
+    padding-left: 37px
+    padding-right: 25px
+    font-weight: 400
+    text-transform: initial
+
+    &:hover
+      color: #ffffff
+
+    &:hover:after
+      // background-color: transparent
