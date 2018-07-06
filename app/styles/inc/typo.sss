@@ -15,14 +15,15 @@ body
   color: inherit
   transition: $transition
 
-  &:hover
+  &:hover:not(div)
     color: $primary
 
   &:after
     content: ''
     display: block
-    position: absolute null 0 -13px 0
-    height: 3px @md 5px
+    position: absolute null 0 null 0
+    bottom: -8px @md -11px @lg -13px
+    height: 4px @md 5px
     border-radius: 5px
     background: $primary
 
