@@ -83,3 +83,22 @@
 
     &:before
       display: none
+
+  &--up
+    padding: 0
+    size: 40px
+    margin: 0
+    box: center middle
+    float: right
+    margin-top: 10px
+
+    &:before
+      display: none
+
+    &:after
+      content: ''
+      display: block
+      background: svg-load('icons/arrow-short.svg' fill: #fff)
+      size: size('icons/arrow-short.svg')
+      transform: rotate(-90deg) translateX(1px)
+
