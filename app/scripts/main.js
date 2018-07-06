@@ -185,3 +185,31 @@ if (gallerySlider) {
   gallerySliderFn();
   window.addEventListener('resize', gallerySliderFn);
 }
+
+//
+// Experts slider
+//
+
+const expertsSlider = document.querySelector('.experts__slider .glide');
+
+if (expertsSlider) {
+  const expertsSliderOpt = {
+    type: 'carousel',
+    perView: 3,
+    gap: 20,
+    breakpoints: {
+      385: {
+        perView: 1,
+        gap: 0,
+        peek: {
+          after: 80,
+          before: 0
+        }
+      },
+      580: { perView: 2, peek: 0 },
+      991: { perView: 2, peek: 0 },
+      1200: { perView: 3 }
+    }
+  };
+  const expertsSliderG = new Glide(expertsSlider, expertsSliderOpt).mount();
+}

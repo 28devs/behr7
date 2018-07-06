@@ -41,7 +41,7 @@
       content: ''
       display: inline-block
       margin-left: 5px @md 11px
-      background: svg-load('icons/arrow-short.svg') no-repeat center / contain
+      background: svg-load('icons/arrow-short.svg' fill: #fff) no-repeat center / contain
       size: 8px 11px @sm size('icons/arrow-short.svg')
       transition: $transition
 
@@ -69,6 +69,9 @@
     font-weight: 400
     font-size: 14px @md *
     text-transform: initial
+    
+    &:before
+      box-shadow: none
 
     &:hover
       color: #ffffff
