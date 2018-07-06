@@ -213,3 +213,23 @@ if (expertsSlider) {
   };
   const expertsSliderG = new Glide(expertsSlider, expertsSliderOpt).mount();
 }
+
+//
+// Subscribe block in blog page on mobile
+//
+
+const subscribeBlock = document.querySelector('.blog__aside');
+
+if (subscribeBlock) {
+  const blog = document.querySelector('.blog__articles');
+  const newsubscribeBlock = subscribeBlock.cloneNode(true);
+
+  newsubscribeBlock.classList.add('blog__aside--mobile');
+  blog.insertBefore(newsubscribeBlock, blog.children[2]);
+}
+
+//
+// Init smoth scroll
+//
+
+var scroll = new SmoothScroll('.scroll-to[href*="#"]');

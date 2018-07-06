@@ -1,17 +1,81 @@
 include inc/head.pug
 include inc/header.pug
 
-.container
-  aside.blog__aside
+.blog
+  .blog__container.container
+    aside.blog__aside
+      .subscribe
+        .subscribe__img
+        .subscribe__title Подпишитесь на новости мира HR
+        .subscribe__text Никакого спама!<br> Только полезные статьи и видео!
 
-  main.blog__main
-    header.blog__header
-      h2.h2 
-        .title-mark Блог
-        |  BE HR
+        form.form(action='#')
+          .input-group.input-group--squared
+            input.input-group__item(type='text' name='name' placeholder='Имя')
+          .input-group.input-group--squared
+            input.input-group__item(type='text' name='name' placeholder='E-mail')
+          .input-group
+            button.btn.btn--simple Подписаться
 
-      select 
-        option Все статьи
+      .blog__category
+        .blog__category-title Рубрики блога:
+
+        nav.blog__category-nav
+          a.blog__category-nav-link(href='#!') Подбор персонала
+          a.blog__category-nav-link(href='#!') Адаптация
+          a.blog__category-nav-link(href='#!') Развитие персонала
+          a.blog__category-nav-link(href='#!') HR аналитика
+          a.blog__category-nav-link(href='#!') Для новичков
+
+      .blog__rss
+        a.blog__rss-link(href='#!') RSS подписка
+
+    main.blog__main
+      header.blog__header
+        h2.blog__header-title.h2 
+          .title-mark Блог
+          |  BE HR
+
+        .blog__header-select Все статьи
+          .blog__header-select-options
+            a.blog__header-select-option(href='#!') Подбор персонала
+            a.blog__header-select-option(href='#!') Адаптация
+            a.blog__header-select-option(href='#!') Развитие персонала
+            a.blog__header-select-option(href='#!') HR аналитика
+            a.blog__header-select-option(href='#!') Для новичков
+
+        form.blog__header-search(action='#')
+          input.blog__header-search-input(type='text' name='q' placeholder='Поиск по блогу')
+          button.btn.btn--simple.blog__header-search-btn Искать
+
+      section.blog__articles
+        article.blog__article.blog__article--video
+          a.blog__article-link(href='#!')
+            img.blog__article-img(src='img/img-3.jpg')
+            .blog__article-title= blog[0].title
+            .blog__article-text= blog[0].text
+            .blog__article-info
+              .blog__article-date= blog[0].date
+              .blog__article-comments 4
+              .blog__article-views 28
+
+        each data in [1,2,3,4,5,6,7,8]
+          article.blog__article
+            a.blog__article-link(href='#!')
+              img.blog__article-img(src='img/img-3.jpg')
+              .blog__article-title= blog[0].title
+              .blog__article-text= blog[0].text
+              .blog__article-info
+                .blog__article-date= blog[0].date
+                .blog__article-comments 4
+                .blog__article-views 28
+
+      .blog__btn
+        a.btn.btn--medium(href='#!') Показать еще
+
+        a.btn.btn--up.scroll-to(href='#')
+
+      
 
       
 
