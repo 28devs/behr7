@@ -1,9 +1,9 @@
-mixin experts(data, btn)
-  .expert
-    .expert__img-wrap 
-      img.expert__img(src='img/experts/avatar-' +data.item+ '.jpg', alt="")
-    .expert__name= data.name 
+mixin expert-preview(data, btn)
+  .expert-preview
+    .expert-preview__img-wrap 
+      img.expert-preview__img(src='img/experts/avatar-' +data.item+ '.jpg', alt="")
+    .expert-preview__name= data.name 
     .expert__desc= data.desc
 
     if btn
-      a.expert__link.btn.btn--small.btn--outline.btn--arrow.btn--arrow-long Подробнее
+      a.expert-preview__link.btn.btn--small.btn--outline.btn--arrow.btn--arrow-long Подробнее
