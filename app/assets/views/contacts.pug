@@ -1,0 +1,96 @@
+include inc/head.pug
+include inc/header.pug
+
+.contacts
+  .contacts__container.container
+    main.contacts__main
+      .contacts__title Контакты
+
+      .contacts__list
+        .contacts__list-item
+          .contacts__list-title.contacts__list-title--phone Позвоните нам
+          a.contacts__list-link.contacts__list-link--phone(href="tel:88005555555") 8 800 123-45-67
+          .contacts__list-tips Горячая линия
+
+        .contacts__list-item
+          .contacts__list-title.contacts__list-title--email Напишите нам
+          a.contacts__list-link.link(href="mailto:info@behr.ru") info@behr.ru
+          .contacts__list-tips Общие вопросы
+          a.contacts__list-link.link(href="mailto:conf@behr.ru") conf@behr.ru
+          .contacts__list-tips Организация тренингов
+
+        .contacts__list-item
+          .contacts__list-title.contacts__list-title--location Наш офис
+          .contacts__list-text 
+            | 199178,<br>
+            | Россия, Санкт-Петербург,<br>
+            | 7-я линия В.О., д. 76<br>
+            | Бизнес центр «Сенатор» <br>
+
+      .contacts__socials
+        each i in ['vk', 'fb', 'in', 'st', 'tg']
+          a.contacts__social(href='#!' class='contacts__social--' + i)
+
+        .contacts__socials-title Мы в социальных сетях
+
+      .contacts__form
+        .contacts__form-title Свяжитесь с нами
+
+        form.form(action='#!')
+          .row.half-gutters
+            .col-12.col-lg-6
+              .input-group.input-group--squared
+                input.input-group__item(type='text' name='name' placeholder='Имя')
+            .col-12.col-lg-6
+              .input-group.input-group--squared
+                input.input-group__item(type='text' name='name' placeholder='Телефон')
+          
+          .input-group.input-group--squared
+            textarea.input-group__item(type='text' name='name' placeholder='Ваше сообщение')
+
+          .input-group
+            button.btn.btn--arrow.btn--medium Отправить сообщение
+
+      #map(style="width: 100%; height: 500px;")
+
+script(src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDKHMTkHEWFerdIYypni1ca3XTW511OVfQ&callback=initMap" async defer)
+script(defer).
+  const loc = [
+    59.94777449,
+    30.2728923,
+    'data:image/svg+xml;utf-8,<svg xmlns="http://www.w3.org/2000/svg" width="37" height="52"><path fill="#26A88A" fill-rule="evenodd" d="M30.732,5.327 C27.332,1.890 22.810,-0.007 18.000,-0.007 C13.185,-0.007 8.665,1.890 5.262,5.327 C-1.029,11.694 -1.812,23.667 3.570,30.924 L18.000,51.995 L32.402,30.953 C37.809,23.667 37.024,11.694 30.732,5.327 L30.732,5.327 ZM18.165,24.687 C14.539,24.687 11.590,21.704 11.590,18.037 C11.590,14.374 14.539,11.392 18.165,11.392 C21.787,11.392 24.736,14.374 24.736,18.037 C24.736,21.704 21.787,24.687 18.165,24.687 L18.165,24.687 Z"/></svg>'
+  ];
+
+  function initMap() {
+    const map = new google.maps.Map(document.getElementById('map'), {
+      zoom: 14,
+      center: new google.maps.LatLng(loc[0], loc[1]),
+      styles: [
+        {
+          stylers: [
+            {
+              saturation: -100
+            }
+          ]
+        }
+      ]
+    });
+
+    var markersBounds = new google.maps.LatLngBounds();
+    var markerPosition = new google.maps.LatLng(loc[0], loc[1]);
+
+    markersBounds.extend(markerPosition);
+
+    var marker = new google.maps.Marker({
+      position: markerPosition,
+      map: map,
+      icon: {
+        anchor: new google.maps.Point(16, 16),
+        url: loc[2]
+      },
+    });
+  }
+
+include inc/footer.pug
++footer('short')
+include inc/foot.pug

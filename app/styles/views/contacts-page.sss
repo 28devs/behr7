@@ -1,0 +1,112 @@
+.contacts
+  background: #f7f7f7
+  padding: 0 @sm 37px 0 60px
+
+  &__container
+    background: #fff
+    padding: 0 !important
+
+  &__title
+    text: $secondary 500 center 32px @lg 36px
+    border-bottom: 1px solid #d4d4d4
+    padding: 20px 0
+
+  &__list
+    box: wrap 
+
+    &-item
+      width: 100% @md 33.33%
+      padding: 0 30px 0 80px @md 0 30px 0 30px @lg 0 30px 0 80px @xl 0 40px 0 100px
+      margin: 30px 0 5px @md 30px 0 @lg 40px 0
+      box-sizing: border-box
+
+      & + &
+        border-left: 0 @md 1px solid #d4d4d4
+        border-top: 1px solid #d4d4d4 @md 0
+        padding-top: 30px @md 0
+
+    &-title
+      text: #000 22px 1 @lg 28px
+      margin-bottom: 20px
+      box: center
+
+      &:before
+        content: ''
+        display: block @md none @lg block
+        position: absolute
+
+      &--phone:before
+        background: svg-load('icons/phone-2.svg')
+        size: size('icons/phone-2.svg')
+        margin-left: -50px
+
+      &--email:before
+        background: svg-load('icons/email-2.svg')
+        size: size('icons/email-2.svg')
+        margin-left: -44px
+
+      &--location:before
+        background: svg-load('icons/location-3.svg')
+        size: size('icons/location-3.svg')
+        margin-left: -39px
+
+    &-link
+      text: 20px
+
+      &--phone
+        text: #000
+        text-decoration: none
+
+    &-tips
+      text: #999 15px
+      margin-bottom: 15px
+
+      &:last-child
+        margin-bottom: 0
+
+    &-text
+      text: #595959 15px 1.65 @lg 17px
+
+  &__form
+    padding: 16px 20px 20px @md 36px 100px 50px @xl 36px 222px 50px
+    background: $secondary
+
+    &-title
+      text: #fff center 22px @md 36px
+
+    .btn
+      max-width: auto @lg 300px
+
+  &__socials
+    margin: 25px 0 @md 10px 0 25px
+    box: center middle wrap
+
+    &-title
+      text: center 18px
+      width: 100%
+      margin-top: 12px
+
+  &__social
+    size: 48px
+    display: block
+    border-radius: 50%
+    background-image: resolve('icons/socials.png')
+    transition: $transition
+
+    &:hover
+      transform: translateY(-2px)
+
+    & + &
+      margin-left: 10px
+    
+    &--vk
+      background-position: 0
+    &--fb
+      background-position: -58px 0
+    &--in
+      background-position: -116px 0
+    &--st
+      background-position: -174px 0
+    &--tg
+      background-position: -232px 0
+    
