@@ -1,49 +1,50 @@
-mixin footer()
+mixin footer(size)
   footer.footer
-    .footer__up
-      .container
-        .row
-          .col-12.col-md-6
-            .footer__title Будем на связи
+    if size != 'short'
+      .footer__up
+        .container
+          .row
+            .col-12.col-md-6
+              .footer__title Будем на связи
 
-            ul.footer__list
-              li.footer__list-item.footer__list-item--phone
-                a.footer__list-item-link(href='tel:88005555555') 8 (800) 555-55-55
+              ul.footer__list
+                li.footer__list-item.footer__list-item--phone
+                  a.footer__list-item-link(href='tel:88005555555') 8 (800) 555-55-55
 
-              li.footer__list-item.footer__list-item--email
-                a.footer__list-item-link.link(href='mailto:mail@behr.ru') mail@behr.ru
+                li.footer__list-item.footer__list-item--email
+                  a.footer__list-item-link.link(href='mailto:mail@behr.ru') mail@behr.ru
 
-              li.footer__list-item.footer__list-item--location-2 Россия, г.Москва,  Ленинский проспект, д.41, 5 этаж, офис 512 (м. Площадь Гагарина)
+                li.footer__list-item.footer__list-item--location-2 Россия, г.Москва,  Ленинский проспект, д.41, 5 этаж, офис 512 (м. Площадь Гагарина)
 
-              li.footer__list-item.footer__list-item--clock 
-                | Пн-Пт: 
-                .footer__list-item-spacer-val 09:00 – 18:00
-                br
-                .footer__list-item-spacer Сб: 
-                .footer__list-item-spacer-val 11:00 – 15:00
-                br
-                .footer__list-item-spacer Вс: 
-                .footer__list-item-spacer-val Выходной
+                li.footer__list-item.footer__list-item--clock 
+                  | Пн-Пт: 
+                  .footer__list-item-spacer-val 09:00 – 18:00
+                  br
+                  .footer__list-item-spacer Сб: 
+                  .footer__list-item-spacer-val 11:00 – 15:00
+                  br
+                  .footer__list-item-spacer Вс: 
+                  .footer__list-item-spacer-val Выходной
 
 
 
-          .col-12.col-md-6
-            .footer__title.footer__title--second Напишите нами:
+            .col-12.col-md-6
+              .footer__title.footer__title--second Напишите нами:
 
-            form.form.footer__form(action='#!')
-              .row.half-gutters
-                .col-12.col-lg-6
-                  .input-group.input-group--squared
-                    input.input-group__item(type='text' name='name' placeholder='Имя')
-                .col-12.col-lg-6
-                  .input-group.input-group--squared
-                    input.input-group__item(type='text' name='name' placeholder='Телефон')
-              
-              .input-group.input-group--squared
-                textarea.input-group__item(type='text' name='name' placeholder='Ваше сообщение')
+              form.form.footer__form(action='#!')
+                .row.half-gutters
+                  .col-12.col-lg-6
+                    .input-group.input-group--squared
+                      input.input-group__item(type='text' name='name' placeholder='Имя')
+                  .col-12.col-lg-6
+                    .input-group.input-group--squared
+                      input.input-group__item(type='text' name='name' placeholder='Телефон')
+                
+                .input-group.input-group--squared
+                  textarea.input-group__item(type='text' name='name' placeholder='Ваше сообщение')
 
-            .input-group
-              button.footer__btn.btn.btn--arrow.btn--medium Отправить сообщение
+              .input-group
+                button.footer__btn.btn.btn--arrow.btn--medium Отправить сообщение
 
     .footer__down
       .footer__down-container.container
