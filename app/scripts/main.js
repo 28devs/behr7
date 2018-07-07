@@ -219,9 +219,9 @@ if (expertsSlider) {
 //
 
 const subscribeBlock = document.querySelector('.blog__aside');
+const blog = document.querySelector('.blog__articles');
 
-if (subscribeBlock) {
-  const blog = document.querySelector('.blog__articles');
+if (subscribeBlock && blog) {
   const newsubscribeBlock = subscribeBlock.cloneNode(true);
 
   newsubscribeBlock.classList.add('blog__aside--mobile');
@@ -233,3 +233,29 @@ if (subscribeBlock) {
 //
 
 var scroll = new SmoothScroll('.scroll-to[href*="#"]');
+
+//
+// Tabs
+//
+
+const tabsItem = document.querySelectorAll('.tabs__link');
+
+if (tabsItem) {
+  tabsItem.forEach(function(item, id, er) {
+    item.addEventListener('click', function(e) {
+      e.preventDefault();
+
+      er.forEach(function(item) {
+        const idDisactive = item.getAttribute('href').substring(1);
+        const tabContentDisactive = document.getElementById(idDisactive);
+        tabContentDisactive.classList.remove('tabs--active');
+        item.classList.remove('tabs--active');
+      });
+
+      const idActive = this.getAttribute('href').substring(1);
+      const tabContentActive = document.getElementById(idActive);
+      tabContentActive.classList.add('tabs--active');
+      this.classList.add('tabs--active');
+    });
+  });
+}

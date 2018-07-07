@@ -1,0 +1,26 @@
+.tabs
+  border-bottom: 1px #dedede solid
+  box: st
+  margin: 20px 0 0 0
+
+  &__link
+    text: #5e5e5e 16px
+    text-decoration: none
+    padding: 10px 28px
+    display: block
+    margin-bottom: -1px
+    border: 1px #fff solid
+    border-bottom-color: #dedede
+
+  &__content
+    display: none
+    margin: 20px 0
+
+  &--active
+    &^&__link
+      border: 1px #dedede solid
+      border-bottom-color: #fff
+      text: $secondary
+
+    &^&__content
+      display: block
