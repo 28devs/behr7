@@ -1,0 +1,136 @@
+include inc/head.pug
+include inc/header.pug
+
+.blog
+  .blog__container.container
+    aside.blog__aside
+      .subscribe
+        .subscribe__img
+        .subscribe__title Подпишитесь на новости мира HR
+        .subscribe__text Никакого спама!<br> Только полезные статьи и видео!
+
+        form.form(action='#')
+          .input-group.input-group--squared
+            input.input-group__item(type='text' name='name' placeholder='Имя')
+          .input-group.input-group--squared
+            input.input-group__item(type='text' name='name' placeholder='E-mail')
+          .input-group
+            button.btn.btn--simple Подписаться
+
+      .blog__category
+        .blog__category-title Рубрики блога:
+
+        nav.blog__category-nav
+          a.blog__category-nav-link(href='#!') Подбор персонала
+          a.blog__category-nav-link(href='#!') Адаптация
+          a.blog__category-nav-link(href='#!') Развитие персонала
+          a.blog__category-nav-link(href='#!') HR аналитика
+          a.blog__category-nav-link(href='#!') Для новичков
+
+      .blog__rss
+        a.blog__rss-link(href='#!') RSS подписка
+
+    main.blog__main
+      header.blog__header
+        .blog__header-breadcrumbs 
+          a.blog__header-breadcrumbs-link(href='#!') Блог
+          | Адаптация
+
+        form.blog__header-search(action='#')
+          input.blog__header-search-input(type='text' name='q' placeholder='Поиск по блогу')
+          button.btn.btn--simple.blog__header-search-btn Искать
+
+      h1.h1.blog__post-title Как подобрать персонал
+      a.blog__post-autor(href='#!') Дмитрий Миронов
+      .blog__article-info.blog__post-info
+        .blog__article-date= blog[0].date
+        .blog__article-comments 4
+        .blog__article-views 28
+
+      .blog__post-content
+        img(src='img/img-4.jpg')
+
+        p Собеседование — встреча с потенциальным работодателем или его представителем при приеме на работу. Цель собеседования — познакомиться воочию, понять, насколько работодатель и соискатель подходят друг другу, а также обсудить детали сотрудничества. На собеседовании работодатель задаёт вопросы, касающиеся образования соискателя, его опыта, полученных навыков и знаний. Также возможны вопросы личного характера: цели, устремления в жизни, чего соискатель хочет добиться, какие у него планы.
+        p В крупных компаниях часто проводят несколько уровней собеседования: с рекрутером, со службой безопасности, с психологом, с начальником отдела, с высшим руководством.
+        p При приеме на работу кандидату часто предлагают пройти тесты или схожие испытания. Тесты бывают как психологическими, так и профессиональными. В Трудовом кодексе РФ нет положений о порядке тестирования при приеме на работу, однако запрет на тестирование также отсутствует. Работник может отказаться от прохождения теста, однако в данном случае его шансы быть принятым на работу существенно снижаются.
+        p На некоторые позиции проводится стрессовое интервью.
+        p Собеседование — встреча с потенциальным работодателем или его представителем при приеме на работу. Цель собеседования — познакомиться воочию, понять, насколько работодатель и соискатель подходят друг другу, а также обсудить детали сотрудничества. На собеседовании работодатель задаёт вопросы, касающиеся образования соискателя, его опыта, полученных навыков и знаний. Также возможны вопросы личного характера: цели, устремления в жизни, чего соискатель хочет добиться, какие у него планы.
+        p В крупных компаниях часто проводят несколько уровней собеседования: с рекрутером, со службой безопасности, с психологом, с начальником отдела, с высшим руководством.
+        p При приеме на работу кандидату часто предлагают пройти тесты или схожие испытания. Тесты бывают как психологическими, так и профессиональными. В Трудовом кодексе РФ нет положений о порядке тестирования при приеме на работу, однако запрет на тестирование также отсутствует. Работник может отказаться от прохождения теста, однако в данном случае его шансы быть принятым на работу существенно снижаются.
+        p На некоторые позиции проводится стрессовое интервью.
+
+
+      .subscribe.subscribe--horizontal
+        .subscribe__img
+        .subscribe__title Подпишитесь на новости мира HR
+        .subscribe__text Никакого спама!<br> Только полезные статьи и видео!
+
+        form.form(action='#')
+          .input-group.input-group--squared
+            input.input-group__item(type='text' name='name' placeholder='Имя')
+          .input-group.input-group--squared
+            input.input-group__item(type='text' name='name' placeholder='E-mail')
+          .input-group
+            button.btn.btn--simple Подписаться
+
+      .blog__post-footer
+        .blog__post-tags
+          a.blog__post-tag(href='#!') Адаптация
+          a.blog__post-tag(href='#!') Подбор персонала
+          a.blog__post-tag(href='#!') Собеседование
+
+        script(async='', src='https://usocial.pro/usocial/usocial.js?v=6.1.4', data-script='usocial', charset='utf-8')
+        .blog__post-share
+          .uSocial-Share(data-pid='e6c7b2208bfb32e6dfbcb7469faf3d8a', data-type='share', data-options='round-rect,style1,default,absolute,horizontal,size32,eachCounter0,counter0', data-social='vk,fb,twi,ok,lin,gPlus,email', data-mobile='vi,wa,sms')
+
+          .blog__post-share-title Поделиться статьей
+
+      .tabs
+        a.tabs__link.tabs--active(href='#comm-vk') Вконтакте
+        a.tabs__link(href='#comm-fb') Facebook
+
+      #comm-vk.tabs__content.tabs--active        
+        #vk_comments
+          
+
+      #comm-fb.tabs__content
+        .fb-comments(data-href='https://28devs.com'  data-width='100%' data-numposts='5')
+        
+
+section.blog__new-articles
+  .container
+    .blog__new-articles-title Новое в блоге
+
+    .blog__new-articles-container
+      each data in [1,2,3,4]
+        article.blog__article
+          a.blog__article-link(href='#!')
+            img.blog__article-img(src='img/img-3.jpg')
+            .blog__article-title= blog[0].title
+            .blog__article-text= blog[0].text
+            .blog__article-info
+              .blog__article-date= blog[0].date
+              .blog__article-comments 4
+              .blog__article-views 28
+              
+
+include inc/footer.pug
++footer
+include inc/foot.pug
+
+
+#fb-root
+script.
+  (function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = 'https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v3.0';
+  fjs.parentNode.insertBefore(js, fjs);
+  }(document, 'script', 'facebook-jssdk'));
+
+script(type='text/javascript', src='https://vk.com/js/api/openapi.js?156')
+script(type='text/javascript').
+  VK.init({apiId: 6626616, onlyWidgets: true});
+script(type='text/javascript').
+  VK.Widgets.Comments("vk_comments", {limit: 10, attach: "*"});
