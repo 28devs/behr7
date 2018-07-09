@@ -1,0 +1,175 @@
+.shop
+  background: #fcfcfc
+
+  &__title
+    text: center #000 500 26px 1.2 @md 32px @lg 36px
+    padding: 20px 0 @md 50px 0 40px
+
+  &__banner
+    background: resolve('shop/banner-bg.jpg') no-repeat center / cover
+    padding: 12px 10px 23px @md 20px 10px 33px
+    padding-left: 12px @md 20px @md 37% @lg 41% @xl 45%
+    background-position-x: center @md right @lg center
+    margin: 0 -20px @md 0
+
+    &-title
+      text: $secondary 700 center 26px 1.1 @sm 28px @md left 40px @lg 49px
+
+      &-mark
+        text: $primary
+        display: inline-block
+
+        &-q
+          display: inline-block
+          text: $secondary
+
+    &-text
+      text: #333 500 center 17px @md left
+      margin-top: 0 @md 10px
+      margin-bottom: 15px @md 0
+
+    &-list
+      margin: 10px 0 22px @md 20px 0 30px
+      box: center wrap
+      padding-left: 33% @sm 42% @md 0
+
+      &-item
+        text: $secondary 13px @md 15px @lg 17px
+        width: 100% @sm 50%
+        margin: 3px 0
+
+    &-btn
+      text: center
+  
+  &__list
+    box: wrap space-between
+    padding: 30px 0 @md 40px 0 @lg 70px 0
+
+    &-item
+      width: 100% @xl calc(50% - 10px)
+      overflow: hidden
+      background: #fff
+      position: relative
+      margin-bottom: 20px
+
+      &--small
+        width: 100% @md calc(50% - 10px) @xl calc(25% - 16px)
+
+        ^^&-type
+          position: static
+          background: #074768
+          text: 16px
+          padding: 8px 13px
+
+        ^^&-date
+          top: 40px
+          text: 16px
+          padding: 4px 13px
+
+        ^^&-title
+          text: 20px
+          margin-bottom: 10px
+          
+        ^^&-content
+          padding: 16px 20px
+
+        ^^&-footer
+          box: horizontal wrap @xl vertical
+          padding: 19px @md 15px 15px 30px 15px
+          position: static
+          
+        ^^&-price
+          margin: 0 20px @md 0 @lg 0 @xl -5px 0 10px 0
+          width: @lg 40% @xl auto
+          text: left
+          padding-left: 0 @md 10px @xl 0
+
+          &-old
+            width: @lg 40% @xl auto
+            text: right
+            padding-right: 0 @md 10px @xl 0
+
+        ^^&-btn
+          padding: @xl 5px 28px 6px
+          text: 15px @md 17px
+          margin-top: 7px @md 10px @xl 0
+
+    &-date
+      background: $secondary
+      text: #fff 500 16px @md 20px
+      padding: 4px 13px @md 3px 14px
+      position: absolute null null null 0
+      top: 40px @md 0
+
+    &-type
+      background: #074768 @md $secondary
+      text: #fff 500 16px @md 17px
+      padding: 8px 13px @md 6px 20px 5px
+      position: static @md absolute 0 0 null null
+
+      &--online
+        box: center
+
+        &:before
+          content: ''
+          display: block
+          background: svg-load('icons/earth.svg')
+          size: size('icons/earth.svg')
+          margin-right: 10px
+          margin-top: -2px
+
+    &-img
+      display: block
+      min-width: 100%
+      position: relative
+      z-index: 2
+      
+    &-content
+      border: 1px solid #e6e6e6
+      border-top: 0
+      padding: 16px 20px @md 25px 30px
+      padding-right: 20px @md 40% @xl 30px
+
+    &-title
+      text: $secondary 500 20px 1.2 @md 24px
+      margin-bottom: 10px @md 15px
+
+    &-text
+      text: #333 15px 1.4
+
+    &-footer
+      box: center middle horizontal wrap @md vertical @xl horizontal
+      padding: 19px @md 122px 20px 28px 20px @xl 20px 15px
+      border: 1px solid #e6e6e6
+      border-top: 0
+      position: static @md absolute null 0 0 null @xl static
+
+    &-price
+      text: #000 500 18px
+      margin: 0 20px @xl 0 28px
+      white-space: nowrap
+
+      &-large
+        text: 30px
+        display: inline-block
+
+      &-old
+        text: #666 18px
+        white-space: nowrap
+
+        &-large
+          text: 20px
+          display: inline-block
+          position: relative
+
+          &:after
+            content: ''
+            display: block
+            size: 100% 2px
+            background: #d70e0e
+            position: absolute 15px null null 1px
+
+    &-btn
+      padding: @lg 11px 28px 
+      white-space: nowrap
+      margin-top: 7px @md 10px @xl 0
