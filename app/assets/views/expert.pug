@@ -51,8 +51,8 @@ section.expert-book
       .expert-book__img
         img(src="img/expert/expert-book.jpg", alt="")
 
-section.expert-sertificate
-  h2.expert-sertficate__title Сертификаты и дипломы
+section.expert-certificate
+  .expert-certificate__title Сертификаты и дипломы
 
   .container
     .glide
@@ -68,8 +68,24 @@ section.expert-sertificate
               img.about__gallery-img(src='img/expert/certificate-4.jpg')
 
         .glide__arrows(data-glide-el='controls')
-          button.glide__arrows-item.glide__arrows-item--prev(data-glide-dir='<')
-          button.glide__arrows-item.glide__arrows-item--next(data-glide-dir='>')
+          button.glide__arrows-item.glide__arrows-item--prev.glide__arrows-item--gray.glide__arrows-item--mobile-only(data-glide-dir='<')
+          button.glide__arrows-item.glide__arrows-item--next.glide__arrows-item--gray.glide__arrows-item--mobile-only(data-glide-dir='>')
+
+    .expert__button-wrap
+      a(href='document/resume.pdf' download).expert__button.btn.btn--arrow.btn--medium Скачать подробное резюме
+
+section.expert-courses
+  .container
+    .expert-courses__title Автор и ведущий курсов BE HR
+
+    .expert-courses__courses
+      each item in coursesShort
+        .expert-courses__item-wrap
+          .course
+            .course__img-wrap
+              img.course__img(src="img/courses/course-img-" + item.number + ".png")
+            .course__title= item.title
+               
 
 include inc/footer.pug
 +footer
