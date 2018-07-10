@@ -40,6 +40,37 @@ section.expert-about
           .iframeWrap
             <iframe src="https://www.youtube.com/embed/zIwLWfaAg-8" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
 
+section.expert-book
+  .container
+    .expert-book__container
+      p.expert-book__annotation Игоря заслуженно называют одним из самых опытных тренеров страны и профессионалом высочайшего уровня. По общему мнению, участие в его программах всегда превосходит ожидания как по результативности, так и по удовлетворённости процессом обучения.
+      .expert-book__desc
+        .expert-book__title Название книги
+        .expert-book__author Павел Шмелев
+
+      .expert-book__img
+        img(src="img/expert/expert-book.jpg", alt="")
+
+section.expert-sertificate
+  h2.expert-sertficate__title Сертификаты и дипломы
+
+  .container
+    .glide
+        .glide__track(data-glide-el='track')
+          .about__gallery-slides.glide__slides
+            .about__gallery-item
+              img.about__gallery-img(src='img/expert/certificate-1.jpg')
+            .about__gallery-item
+              img.about__gallery-img(src='img/expert/certificate-2.jpg')
+            .about__gallery-item
+              img.about__gallery-img(src='img/expert/certificate-3.jpg')
+            .about__gallery-item
+              img.about__gallery-img(src='img/expert/certificate-4.jpg')
+
+        .glide__arrows(data-glide-el='controls')
+          button.glide__arrows-item.glide__arrows-item--prev(data-glide-dir='<')
+          button.glide__arrows-item.glide__arrows-item--next(data-glide-dir='>')
+
 include inc/footer.pug
 +footer
 include inc/foot.pug
