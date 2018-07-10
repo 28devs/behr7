@@ -1,22 +1,29 @@
 include inc/head.pug
 include inc/header.pug
 
-.expert
+section.expert
   .container
-    .expert__head
-      .row
-        .col-8.offset-4
+    .row
+      .col-12.col-md-8.offset-md-4
+        .expert__head
           a.expert__head-link(href="!#") Все эксперты
           .expert__head-name Павел Шмелев
           .expert__head-desc Аккредитованный тренер-преподаватель школы HR-MOS
     .row
-      .col-4
-        .expert__photo
-          img(src="img/expert/expert-photo.jpg", alt="")
-      .col-8
-        .expert__stat
-          .exert__stat-item Тренингов проведено
-            
+      .col-12.col-md-4
+        .expert__photo-wrap
+          img.expert__photo(src="img/expert/expert-photo.jpg", alt="")
+      .col-12.col-md-8
+        .expert__stat-wrap
+          .expert__stat
+            each item in [1,2,3,4,5]
+              .expert__stat-item
+                .expert__stat-count 28
+                .expert__stat-count-desc Тренингов проведено
+
+        .expert__button-wrap
+          .expert__button-desc Хотите задать вопрос эксперту?
+          .expert__button.btn.btn--arrow.btn--medium Задать вопрос эксперту
 
 include inc/footer.pug
 +footer

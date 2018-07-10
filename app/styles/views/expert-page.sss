@@ -1,11 +1,82 @@
 .expert
+  padding: 40px 0 0
+  background-color: #fafafa
 
-  &__head-link
-    text: #000 17px
+  &__photo-wrap
+    display: block
+    margin-top: 20px  @md -6vw @lg -3.5vw @xl -88px
+    position: relative
+    
+  &__photo
+    display: block
+    max-width: 100%
+    margin: 0 auto
+    max-height: 328px @md initial
 
-    &:before
-      content: ''
-      display: inline-block
-      transform: rotate(180deg)
-      background: svg-load('icons/arrow-short.svg' fill: #000) no-repeat center / contain
-      size: 8px 11px @sm size('icons/arrow-short.svg')
+  &__head
+    margin-left: 0 @md 30px
+
+    &-link
+      text: #000 17px
+
+      &:before
+        content: ''
+        display: inline-block
+        margin-right: 4px
+        transform: rotate(180deg) scale(.8)
+        background: svg-load('icons/arrow-short.svg' fill: #000) no-repeat center / contain
+        size: 8px 11px @sm size('icons/arrow-short.svg')
+
+    &-name
+      text: 32px @md 36px 
+      margin: 0px 0 -5px @lg 8px 0 3px 
+
+    &-desc
+      text: 16px @lg 20px
+  
+  &__stat
+    box: horizontal center @md space-between 
+    flex-wrap: wrap
+    border-bottom: 0 @md 1px solid #e0e0e0
+    width: 100%
+    max-width: 715px
+    padding: 15px 0 @lg 42px 0 20px
+    margin-left: 0 @md 30px
+    background-color: #fff @md initial
+    margin: @md-down 0 auto
+
+    &-wrap
+      border-bottom: @md-down 2px solid #e0e0e0
+      background-color: @md-down #fff
+
+    &-item
+      box: vertical
+      align-items: center @md initial
+      margin-bottom: 10px @md 0
+      width: 33.333334% @md 73px @lg 20% @xl 110px
+      
+
+    &-count
+      display: flex
+      justify-content: center
+      align-items: center
+      border: 3px $primary solid
+      text: 28px $primary center @md 24px @lg 32px @xl 36px
+      border-radius: 50%
+      box-sizing: border-box
+      size: 85px @md 73px @lg 90px @xl 110px
+
+    &-count-desc
+      margin: 8px 0 @lg 20px 0
+      max-width: 86px @md initial
+      text: 15px 1.2 @md 13px @lg 17px @xl 20px 
+      text-align: center @lg left @xl center
+    
+  &__button-wrap
+    text-align: center
+    padding: 20px 0 @lg 15px 0
+
+  &__button-desc
+    display: none @lg block
+    text: 19px #000 500
+    margin-bottom: 12px
