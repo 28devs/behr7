@@ -1,0 +1,63 @@
+include inc/head.pug
+include inc/header.pug
+
+.shop
+  .shop__container.container
+    main.shop__main
+      .shop__title Магазин программ
+
+      .shop__banner
+        .shop__banner-title Онлайн курс <div class="shop__banner-title-mark"><div class="shop__banner-title-mark-q">«⁠</div>PRO HR<div class="shop__banner-title-mark-q">»</div></div>
+        .shop__banner-text Самый полный и эффективный курс для HR специалистов в СНГ
+        .shop__banner-list
+          .shop__banner-list-item Все направления HR
+          .shop__banner-list-item Отработка на практике
+          .shop__banner-list-item Обратная связь от кураторов
+          .shop__banner-list-item Чат с преподавателем
+          .shop__banner-list-item Из любой точки мира
+          .shop__banner-list-item Сертификат и гос.диплом
+        .shop__banner-btn
+          a.btn.btn--medium.shop__banner-btn-item(href='#!') Подробнее
+
+      .shop__list
+        each i in [1,2]
+          .shop__list-item
+            .shop__list-type.shop__list-type--online Онлайн-тренинг
+            .shop__list-date 22 февраля
+            img.shop__list-img(src='img/shop/img-1.jpg')
+
+            .shop__list-content
+              .shop__list-title Интервью по компетенциям
+              .shop__list-text Собеседование — встреча с потенциальным работодателем или его представителем при приеме на работу. Цель собеседования — познакомиться воочию, понять, насколько работодатель и соискатель подходят друг другу, а также обсудить детали сотрудничества.
+
+            .shop__list-footer
+              .shop__list-price-old 
+                .shop__list-price-old-large 13 999 
+                |  р.
+              .shop__list-price от 
+                .shop__list-price-large 9 999
+                |  р.
+              a.shop__list-btn.btn.btn--medium.btn--arrow(href='#!') Подробнее
+
+        each i in [1,2,3,4]
+          .shop__list-item.shop__list-item--small
+            .shop__list-type Семинар
+            .shop__list-date 22 февраля
+            img.shop__list-img(src='img/shop/img-1.jpg')
+
+            .shop__list-content
+              .shop__list-title Интервью по компетенциям
+              .shop__list-text Цель собеседования — познакомиться воочию, понять, насколько работодатель и соискатель подходят друг другу, а также обсудить детали сотрудничества.
+
+            .shop__list-footer
+              .shop__list-price-old 
+                .shop__list-price-old-large 13 999 
+                |  р.
+              .shop__list-price от 
+                .shop__list-price-large 9 999
+                |  р.
+              a.shop__list-btn.btn.btn--medium.btn--arrow(href='#!') Подробнее
+      
+include inc/footer.pug
++footer
+include inc/foot.pug
