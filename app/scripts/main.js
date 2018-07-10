@@ -13,18 +13,6 @@ if (headerMenu) {
 }
 
 //
-// Set body padding-top for fixed header
-//
-
-const setBodyPaddingTop = function() {
-  let headerHeight = document.querySelector('.header').clientHeight;
-  document.querySelector('body').style.paddingTop = headerHeight + 'px';
-};
-
-window.addEventListener('resize', setBodyPaddingTop);
-window.addEventListener('DOMContentLoaded', setBodyPaddingTop);
-
-//
 // Dots generate for sliders
 //
 
@@ -327,4 +315,141 @@ if (tabsItem) {
   });
 }
 
+<<<<<<< HEAD
+=======
+//
+// About certs slider
+//
 
+const aboutSlider = document.querySelector('.about__gallery .glide');
+
+if (aboutSlider) {
+  var aboutSliderInit = false;
+
+  const aboutSliderFn = function() {
+    if (window.innerWidth < 768) {
+      if (!aboutSliderInit) {
+        aboutSliderInit = new Glide(aboutSlider, {
+          perView: 1,
+          gap: 10,
+          peek: {
+            after: 30,
+            before: 0
+          },
+          breakpoints: {
+            385: {
+              perView: 1,
+              gap: 10,
+              peek: {
+                after: 0,
+                before: 0
+              }
+            },
+            580: {
+              gap: 20,
+              perView: 2,
+              peek: {
+                after: 0,
+                before: 0
+              }
+            },
+            991: {
+              gap: 20,
+              perView: 2,
+              peek: {
+                after: 0,
+                before: 0
+              }
+            }
+          }
+        }).mount();
+      }
+    } else {
+      // destroy slider if init
+      if (typeof aboutSliderInit === 'object') {
+        aboutSliderInit.destroy();
+        aboutSliderInit = false;
+      }
+    }
+  };
+
+  aboutSliderFn();
+  window.addEventListener('resize', aboutSliderFn);
+}
+>>>>>>> 527db1334d08ba2be8d26c81118432758767daa6
+
+//
+// About photos modal
+//
+
+const getTargetHTML = function(elem) {
+  const id = elem.getAttribute('data-show-id');
+  const target = document.querySelector(`[data-id="${id}"]`);
+
+  return target.outerHTML;
+};
+
+document.querySelectorAll('[data-show-id]').forEach(function(elem) {
+  const html = getTargetHTML(elem);
+  elem.onclick = basicLightbox.create(html).show;
+});
+
+//
+// About photos slider
+//
+
+const photosSlider = document.querySelector('.about__photos-slider .glide');
+
+if (photosSlider) {
+  var photosSliderInit = false;
+
+  const photosSliderFn = function() {
+    if (window.innerWidth < 768) {
+      if (!photosSliderInit) {
+        photosSliderInit = new Glide(photosSlider, {
+          perView: 1,
+          gap: 0,
+          peek: {
+            after: 30,
+            before: 0
+          },
+          breakpoints: {
+            385: {
+              perView: 1,
+              gap: 0,
+              peek: {
+                after: 0,
+                before: 0
+              }
+            },
+            580: {
+              gap: 0,
+              perView: 2,
+              peek: {
+                after: 0,
+                before: 0
+              }
+            },
+            991: {
+              gap: 0,
+              perView: 2,
+              peek: {
+                after: 0,
+                before: 0
+              }
+            }
+          }
+        }).mount();
+      }
+    } else {
+      // destroy slider if init
+      if (typeof photosSliderInit === 'object') {
+        photosSliderInit.destroy();
+        photosSliderInit = false;
+      }
+    }
+  };
+
+  photosSliderFn();
+  window.addEventListener('resize', photosSliderFn);
+}

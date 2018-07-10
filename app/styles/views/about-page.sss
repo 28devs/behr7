@@ -1,0 +1,140 @@
+.about
+  margin-top: 20px @md 40px @lg 50px
+
+  &__title
+    text: 500 center 26px @md 36px
+    margin-bottom: 20px @md 40px @lg 50px
+
+  &__block
+    box: wrap-reverse center @xl nowrap
+    margin-bottom: 30px @md 50px @lg 70px
+
+    &-content
+      width: 100% @lg 50%
+      padding-right: @lg 40px
+      box-sizing: border-box
+      order: 1
+
+    &-title
+      text: center 22px 1.2 @lg left 28px
+      margin-bottom: 15px @lg 20px
+
+    &-text
+      text: 300 15px @md 17px @xl 19px
+
+    &-img
+      width: calc(100% + 40px) @sm 100% @lg 50%
+      order: 1 @lg 3
+      padding-top: 38% @xl 36%
+      background: resolve('about/img-1.jpg') center / cover
+      margin-bottom: 20px @lg 0
+      margin: @sm-down * -20px 
+
+  &__today
+    box: center wrap
+    margin-bottom: 30px
+
+    &-title
+      text: center 22px 1.2 @lg 28px
+      width: 100%
+      margin-bottom: 15px @md 25px @lg 40px
+
+    &-list
+      width: 100% @md 48%
+      padding: 7px 15px @md 10px 20px @xl 20px 30px
+      border-left: 6px solid $primary
+      text: 300 15px 1.9 @md 18px @lg 22px @xl 25px
+
+      &-mark
+        text: 500 $primary
+        display: inline-block
+
+    &-text
+      width: 100% @md 45%
+      text: 300 15px @md 18px 1.5 @lg 20px 1.9
+      margin-top: 20px @md 0
+
+  &__gallery
+    padding: 30px 0 @md 45px 0 @lg 57px 0
+    background: #0c3f5a resolve('about/cert-bg.jpg') center / cover
+
+    .glide__arrows
+      display: flex @md none 
+
+    &-slides
+      box: space-between
+
+    &-item
+      position: relative
+      padding-bottom: 5px @lg 8px
+      width: 23.5%
+
+      &:after
+        content: ''
+        display: block
+        background: #fff
+        position: absolute
+        top: 10px
+        right: 10px
+        bottom: -7px
+        left: 10px
+        box-shadow: 0 2px 6px 0 rgba(1, 1, 1, 0.15)
+        z-index: 1
+
+    &-img
+      display: block
+      box-shadow: 0 2px 6px 0 rgba(1, 1, 1, 0.15)
+      position: relative
+      z-index: 2
+      max-width: 100%
+
+  &__experts
+    background: #fff
+
+  &__partners
+    padding: 20px 0 30px @md 40px 0 60px
+    background: #f5f5f5
+
+    &-title
+      margin-bottom: 20px @md 40px
+      text: center 26px @md 30px @lg 36px
+
+    &-list
+      box: center wrap
+
+    &-item
+      width: 50%
+      box: center @lg-down wrap
+      margin-bottom: 15px @md 30px @lg 45px
+
+      &-title
+        text: 500 16px
+        margin-bottom: 2px
+        display: none @lg block
+
+      &-text
+        text: 15px
+        display: none @sm block
+
+      &-img
+        max-height: 54% @sm 66%
+        max-width: 90%
+
+        &-wrap
+          width: 342px
+          box: center middle @sm top @lg middle
+          height: 80px @lg auto
+
+    &-btn
+      box: center middle
+      margin-top: 20px
+
+  &__photos
+
+    &-slide
+
+      &-img
+        width: 100%
+        max-height: 150px @md auto
+        display: block
+        object-fit: cover

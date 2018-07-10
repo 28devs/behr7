@@ -1,0 +1,100 @@
+include inc/head.pug
+include inc/header.pug
+
+.about
+  .about__container.container
+    main.about__main
+      .about__title О компании
+
+      .about__block
+        .about__block-content
+          h3.about__block-title История Академии
+          p.about__block-text Адаптация персонала — процесс ознакомления, приспособления работников к содержанию и условиям трудовой деятельности, а также к социальной среде организации. Адаптация является одной из составляющих частей управления персоналом. Этот термин применим как к новым сотрудникам, нанимаемым извне, так и к сотрудникам, перемещаемым на новую должность в порядке внутренней ротации. Адаптация — приспособление организма, индивидуума, коллектива к изменяющимся условиям среды.
+
+        .about__block-img
+
+      .about__today
+        .about__today-title Академия BeHR сегодня
+
+        .about__today-list
+          .about__today-list-mark 15 
+          |  преподавателей-экспертов<br>
+          | Более 
+          .about__today-list-mark 10 
+          |  программ по всем сферам HR<br>
+          .about__today-list-mark 2 
+          |  года успешной работы<br>
+          | Более 
+          .about__today-list-mark 300 
+          |  постоянных клиентов
+
+        .about__today-text Мотивация персонала — один из способов повышения производительности труда. Мотивация труда персонала является ключевым направлением кадровой политики любого предприятия. Наиболее эффективной системой мотивации сотрудников, является «мотивация на результат».
+
+  .about__gallery
+    .container
+      .glide
+        .glide__track(data-glide-el='track')
+          .about__gallery-slides.glide__slides
+            .about__gallery-item
+              img.about__gallery-img(src='img/about/cert-1.jpg')
+            .about__gallery-item
+              img.about__gallery-img(src='img/about/cert-2.jpg')
+            .about__gallery-item
+              img.about__gallery-img(src='img/about/cert-3.jpg')
+            .about__gallery-item
+              img.about__gallery-img(src='img/about/cert-4.jpg')
+
+        .glide__arrows(data-glide-el='controls')
+          button.glide__arrows-item.glide__arrows-item--prev(data-glide-dir='<')
+          button.glide__arrows-item.glide__arrows-item--next(data-glide-dir='>')
+      
+  section.about__experts.experts.experts--slider
+    .container.container--full-sm
+      h1.experts__title.h1 
+        a.title-mark(href='#!') Наши эксперты
+
+      .experts__slider
+        .glide
+          .glide__track(data-glide-el='track')
+            .glide__slides
+              each data in experts
+                .glide__slide
+                  +expert-preview(data, true)
+
+          .glide__arrows.glide__arrows--side(data-glide-el='controls')
+            button.glide__arrows-item.glide__arrows-item--prev.glide__arrows-item--gray(data-glide-dir='<')
+            button.glide__arrows-item.glide__arrows-item--next.glide__arrows-item--gray(data-glide-dir='>')
+
+      .experts__btn-wrap
+        a.experts__btn.btn.btn--medium.btn--arrow(href="!#") Узнать всех экспертов
+
+  section.about__partners
+    .container
+      .about__partners-title Наши партнеры
+
+      .about__partners-list
+        for i in [1,2,3,4,5,6,7,8]
+          .about__partners-item
+            .about__partners-item-img-wrap
+              img.about__partners-item-img(src='img/partners/' + i + '.png')
+            .about__partners-item-content
+              .about__partners-item-title Samsung Group
+              .about__partners-item-text Американская компания, один из крупнейших разработчиков графических ускорителей
+
+      .about__partners-btn
+        a.btn.btn--medium.btn--arrow(href='#!') Станьте нашим партнером
+
+  section.about__photos
+    .about__photos-slider
+      .glide
+        .glide__track(data-glide-el='track')
+          .glide__slides
+            each i in [2,3,4,5,6,7]
+              .glide__slid
+                img(width="1400" height="900" src="https://placehold.it/1400x900" data-basicLightbox data-id="0")
+                a.about__photos-slide(href='#!' data-show-id='0')
+                  img.about__photos-slide-img(src='img/about/img-'+i+'.jpg')
+
+include inc/footer.pug
++footer
+include inc/foot.pug
