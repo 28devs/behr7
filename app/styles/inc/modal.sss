@@ -1,2 +1,36 @@
 [data-basicLightbox]
   display: none !important
+
+.basicLightbox
+  background: rgba(9, 60, 87, 0.87)
+
+  &__placeholder
+    width: 100%
+
+.modal
+  background: #fafafa
+  position: relative
+  margin: 0 auto
+
+  &--recall
+    width: 100% @lg 750px
+    max-width: 510px @md 750px
+    box-sizing: border-box
+    padding: 25px 20px 30px 20px @sm 30px 40px @md 30px 60px 40px 307px
+    background-image: none @md resolve('modal/recall-bg.jpg')
+    background-position: left bottom
+    background-repeat: no-repeat
+
+  &__close
+    background: svg-load('icons/close.svg') center / contain
+    size: 16px @md 23px
+    position: absolute 20px 20px null null
+    cursor: pointer
+
+  &__title
+    text: $secondary 700 26px 1.2 @md 28px @lg 30px
+
+  &__text
+    text: $secondary 500 18px 1.4 @md 19px @lg 20px
+    margin-bottom: 20px
+    margin-top: 5px

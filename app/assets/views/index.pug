@@ -122,7 +122,7 @@ section.partners
           img.partners__list-item-img(src='img/partners/' + i + '.png')
 
     .partners__btn
-      a.btn.btn--medium.btn--arrow(href='#!') Станьте нашим партнером
+      a.btn.btn--medium.btn--arrow(href='#!' data-show-id='recall') Станьте нашим партнером
 
 
 section.blog-new
@@ -223,6 +223,7 @@ section.call-action
       .input-group
         button.call-action__btn.btn.btn--medium.btn--arrow Подобрать тренинг
 
+include inc/modal-recall.pug
 
 include inc/footer.pug
 +footer

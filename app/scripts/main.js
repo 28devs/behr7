@@ -445,6 +445,20 @@ if (expertCertSlider) {
 // About photos modal
 //
 
+function eventFire(el, etype) {
+  if (el.fireEvent) {
+    el.fireEvent('on' + etype);
+  } else {
+    var evObj = document.createEvent('Events');
+    evObj.initEvent(etype, true, false);
+    el.dispatchEvent(evObj);
+  }
+}
+
+function closeModal() {
+  eventFire(document.querySelector('.basicLightbox '), 'click');
+}
+
 const getTargetHTML = function(elem) {
   const id = elem.getAttribute('data-show-id');
   const target = document.querySelector(`[data-id="${id}"]`);
