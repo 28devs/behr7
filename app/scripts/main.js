@@ -215,6 +215,73 @@ if (subscribeBlock && blog) {
   newsubscribeBlock.classList.add('blog__aside--mobile');
   blog.insertBefore(newsubscribeBlock, blog.children[2]);
 }
+//
+// function throttle from underscroe
+//
+
+function throttle(func, wait, options) {
+  var context, args, result;
+  var timeout = null;
+  var previous = 0;
+  if (!options) options = {};
+  var later = function() {
+    previous = options.leading === false ? 0 : Date.now();
+    timeout = null;
+    result = func.apply(context, args);
+    if (!timeout) context = args = null;
+  };
+  return function() {
+    var now = Date.now();
+    if (!previous && options.leading === false) previous = now;
+    var remaining = wait - (now - previous);
+    context = this;
+    args = arguments;
+    if (remaining <= 0 || remaining > wait) {
+      if (timeout) {
+        clearTimeout(timeout);
+        timeout = null;
+      }
+      previous = now;
+      result = func.apply(context, args);
+      if (!timeout) context = args = null;
+    } else if (!timeout && options.trailing !== false) {
+      timeout = setTimeout(later, remaining);
+    }
+    return result;
+  };
+};
+//
+//resize expert block
+//
+
+const windowWidth = window.innerWidth;
+const expertStatBlock = document.querySelector('.expert__stat-wrap');
+
+function getPageTopLeft(el) {
+  var rect = el.getBoundingClientRect();
+  var docEl = document.documentElement;
+  return  rect.left + (window.pageXOffset || docEl.scrollLeft || 0);
+}
+function windowsSize() {
+  if(expertStatBlock && windowWidth < 768) {
+
+    // const windowWidth = window.innerWidth;
+    const left = getPageTopLeft(expertStatBlock);
+    const documentWidth = document.documentElement.clientWidth;
+    console.log(left)
+    console.log(documentWidth)
+    expertStatBlock.style.width = documentWidth + 'px';
+    expertStatBlock.style.marginLeft = "-" + left + 'px';
+  } else {
+    expertStatBlock.style.width = '100%';
+    expertStatBlock.style.marginLeft = '0';
+  }
+}
+
+windowsSize()
+window.addEventListener('resize',  throttle(function(){
+  windowsSize()
+}, 500));
 
 //
 // Init smoth scroll

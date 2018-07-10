@@ -1,11 +1,129 @@
 .expert
+  padding: 40px 0 0
+  background-color: #fafafa
 
-  &__head-link
-    text: #000 17px
+  &__photo-wrap
+    display: block
+    margin-top: 20px  @md -6vw @lg -3.5vw @xl -88px
+    position: relative
+    
+  &__photo
+    display: block
+    max-width: 100%
+    margin: 0 auto
+    max-height: 328px @md initial
 
+  &__head
+    margin-left: 0 @md 30px
+
+    &-link
+      text: #000 17px
+
+      &:before
+        content: ''
+        display: inline-block
+        margin-right: 4px
+        transform: rotate(180deg) scale(.8)
+        background: svg-load('icons/arrow-short.svg' fill: #000) no-repeat center / contain
+        size: 8px 11px @sm size('icons/arrow-short.svg')
+
+    &-name
+      text: 32px @md 36px 
+      margin: 0px 0 -5px @lg 8px 0 3px 
+
+    &-desc
+      text: 16px @lg 20px
+  
+  &__stat
+    box: horizontal center @md space-between 
+    flex-wrap: wrap
+    border-bottom: 0 @md 1px solid #e0e0e0
+    width: 100%
+    max-width: 715px
+    padding: 15px 0 @lg 42px 0 20px
+    margin-left: 0 @md 30px
+    background-color: #fff @md initial
+    margin: @md-down 0 auto
+
+    &-wrap
+      border-bottom: @md-down 2px solid #e0e0e0
+      background-color: @md-down #fff
+
+    &-item
+      box: vertical
+      align-items: center @md initial
+      margin-bottom: 10px @md 0
+      width: 33.333334% @md 73px @lg 20% @xl 110px
+      
+
+    &-count
+      display: flex
+      justify-content: center
+      align-items: center
+      border: 3px $primary solid
+      text: 28px $primary center @md 24px @lg 32px @xl 36px
+      border-radius: 50%
+      box-sizing: border-box
+      size: 85px @md 73px @lg 90px @xl 110px
+
+    &-count-desc
+      margin: 8px 0 @lg 20px 0
+      max-width: 86px @md initial
+      text: 15px 1.2 @md 13px @lg 17px @xl 20px 
+      text-align: center @lg left @xl center
+    
+  &__button-wrap
+    text-align: center
+    padding: 20px 0 @lg 15px 0
+
+  &__button-desc
+    display: none @lg block
+    text: 19px #000 500
+    margin-bottom: 12px
+
+.expert-about
+  padding: 40px 0
+
+  &__container
+    box: vertical @xl horizontal
+    margin: 0 @xl 0 -40px
+
+  &__elem
+    width: 100% @xl 47%
+    padding: 0 @xl 0 40px
+    box-sizing: border-box
+
+    &:nth-of-type(2)
+      order: -1 @xl 1
+      width: 100% @xl 53%
+      margin-bottom: @xl-down 40px
+
+  &__video
+    max-width: @xl-down 474px
+    margin: 0 auto
+
+  &__item
+    margin-bottom: 15px
+    position: relative
+    padding-left: 60px
+
+    &-wrap
+      flex-shrink: 12
+    
     &:before
       content: ''
-      display: inline-block
-      transform: rotate(180deg)
-      background: svg-load('icons/arrow-short.svg' fill: #000) no-repeat center / contain
-      size: 8px 11px @sm size('icons/arrow-short.svg')
+      display: block
+      position: absolute
+      left: 0px
+      top: 8px
+
+    @each $i, $icon in (1,2,3,4), (education, biography, experience, facts)
+      &:nth-of-type($(i)):before
+        background: svg-load('expert/$(icon).svg') no-repeat center / contain
+        size: size('expert/$(icon).svg')
+    
+  &__title
+    text: 20px * 500 @lg 24px
+
+  &__desc
+    text: 14px @md 16px
