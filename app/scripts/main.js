@@ -315,8 +315,6 @@ if (tabsItem) {
   });
 }
 
-<<<<<<< HEAD
-=======
 //
 // About certs slider
 //
@@ -376,7 +374,6 @@ if (aboutSlider) {
   aboutSliderFn();
   window.addEventListener('resize', aboutSliderFn);
 }
->>>>>>> 527db1334d08ba2be8d26c81118432758767daa6
 
 //
 // About photos modal
