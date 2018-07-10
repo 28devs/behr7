@@ -1,0 +1,17 @@
+.modal.modal--recall(data-id='recall')
+  .modal__close(onclick='closeModal()')
+
+  .modal__content
+    .modal__title Нужна консультация?
+    .modal__text Мы вам перезвоним
+
+    form.form.blog-new__action-form(action='#!')
+      .input-group
+        input.input-group__item(type='text' name='name' placeholder='Ваше имя')
+      
+      .input-group
+        input.input-group__item(type='text' name='name' placeholder='Ваш телефон')
+
+      .input-group
+        button.blog-new__action-btn.btn.btn--medium Перезвоните мне
+  
