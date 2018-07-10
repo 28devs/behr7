@@ -326,7 +326,5 @@ if (tabsItem) {
     });
   });
 }
-function newFunction() {
-  console.log(321);
-}
+
 
