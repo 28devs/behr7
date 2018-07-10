@@ -55,7 +55,22 @@ section.expert-sertificate
   h2.expert-sertficate__title Сертификаты и дипломы
 
   .container
-    .expert-sertificate__item-wrap
+    .glide
+        .glide__track(data-glide-el='track')
+          .about__gallery-slides.glide__slides
+            .about__gallery-item
+              img.about__gallery-img(src='img/expert/certificate-1.jpg')
+            .about__gallery-item
+              img.about__gallery-img(src='img/expert/certificate-2.jpg')
+            .about__gallery-item
+              img.about__gallery-img(src='img/expert/certificate-3.jpg')
+            .about__gallery-item
+              img.about__gallery-img(src='img/expert/certificate-4.jpg')
+
+        .glide__arrows(data-glide-el='controls')
+          button.glide__arrows-item.glide__arrows-item--prev(data-glide-dir='<')
+          button.glide__arrows-item.glide__arrows-item--next(data-glide-dir='>')
+
 include inc/footer.pug
 +footer
 include inc/foot.pug

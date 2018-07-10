@@ -273,8 +273,8 @@ function windowsSize() {
     expertStatBlock.style.width = documentWidth + 'px';
     expertStatBlock.style.marginLeft = "-" + left + 'px';
   } else {
-    expertStatBlock.style.width = '100%';
-    expertStatBlock.style.marginLeft = '0';
+    // expertStatBlock.style.width = '100%';
+    // expertStatBlock.style.marginLeft = '0';
   }
 }
 
@@ -373,6 +373,66 @@ if (aboutSlider) {
 
   aboutSliderFn();
   window.addEventListener('resize', aboutSliderFn);
+}
+
+//
+// expert certifica
+//
+
+const expertCertSlider = document.querySelector('.about__gallery .glide');
+
+if (expertCertSlider) {
+  var expertCertSliderInit = false;
+
+  const expertCertSliderFn = function() {
+    if (window.innerWidth < 768) {
+      if (!expertCertSliderInit) {
+        expertCertSliderInit = new Glide(expertCertSlider, {
+          perView: 1,
+          gap: 10,
+          peek: {
+            after: 30,
+            before: 0
+          },
+          breakpoints: {
+            385: {
+              perView: 1,
+              gap: 10,
+              peek: {
+                after: 0,
+                before: 0
+              }
+            },
+            580: {
+              gap: 20,
+              perView: 2,
+              peek: {
+                after: 0,
+                before: 0
+              }
+            },
+            991: {
+              gap: 20,
+              perView: 2,
+              peek: {
+                after: 0,
+                before: 0
+              }
+            }
+          }
+        }).mount();
+      }
+    } else {
+      // destroy slider if init
+      if (typeof expertCertSliderInit === 'object') {
+        expertCertSliderInit.destroy();
+        expertCertSliderInit = false;
+      }
+    }
+  };
+
+  expertCertSliderFn();
+  window.addEventListener('resize', expertCertSliderFn);
 }
 
 //
