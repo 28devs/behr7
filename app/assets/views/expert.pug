@@ -25,6 +25,21 @@ section.expert
           .expert__button-desc Хотите задать вопрос эксперту?
           .expert__button.btn.btn--arrow.btn--medium Задать вопрос эксперту
 
+section.expert-about
+  .container
+    .expert-about__container
+      .expert-about__elem
+        each item in expertAbout
+          .expert-about__item
+            .expert-about__item-text
+              h3.expert-about__title= item.title
+              p.expert-about__desc= item.desc
+
+      .expert-about__elem
+        .expert-about__video
+          .iframeWrap
+            <iframe src="https://www.youtube.com/embed/zIwLWfaAg-8" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+
 include inc/footer.pug
 +footer
 include inc/foot.pug

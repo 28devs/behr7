@@ -80,3 +80,50 @@
     display: none @lg block
     text: 19px #000 500
     margin-bottom: 12px
+
+.expert-about
+  padding: 40px 0
+
+  &__container
+    box: vertical @xl horizontal
+    margin: 0 @xl 0 -40px
+
+  &__elem
+    width: 100% @xl 47%
+    padding: 0 @xl 0 40px
+    box-sizing: border-box
+
+    &:nth-of-type(2)
+      order: -1 @xl 1
+      width: 100% @xl 53%
+      margin-bottom: @xl-down 40px
+
+  &__video
+    max-width: @xl-down 474px
+    margin: 0 auto
+
+  &__item
+    margin-bottom: 15px
+    position: relative
+    padding-left: 60px
+
+    &-wrap
+      flex-shrink: 12
+    
+    &:before
+      content: ''
+      display: block
+      position: absolute
+      left: 0px
+      top: 8px
+
+    @each $i, $icon in (1,2,3,4), (education, biography, experience, facts)
+      &:nth-of-type($(i)):before
+        background: svg-load('expert/$(icon).svg') no-repeat center / contain
+        size: size('expert/$(icon).svg')
+    
+  &__title
+    text: 20px * 500 @lg 24px
+
+  &__desc
+    text: 14px @md 16px
