@@ -10,6 +10,9 @@
       padding: 25px 0 @md 30px 0
       height: auto
 
+      &--1 .hero__slider-list
+        margin-top: @sm-down -90px
+
       @for $i from 1 to 3
         &--$i
           background: resolve('hero/bg-$i.jpg') center / cover
