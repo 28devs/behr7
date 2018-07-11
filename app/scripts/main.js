@@ -442,7 +442,7 @@ if (expertCertSlider) {
 }
 
 //
-// About photos modal
+// Modals
 //
 
 function eventFire(el, etype) {
@@ -460,8 +460,14 @@ function closeModal() {
 }
 
 const getTargetHTML = function(elem) {
-  const id = elem.getAttribute('data-show-id');
+  let id = elem.getAttribute('data-show-id');
+  if (id === null) {
+    id = elem.getAttribute('data-show-id-white');
+  }
+
   const target = document.querySelector(`[data-id="${id}"]`);
+
+  if (target === null) return '';
 
   return target.outerHTML;
 };
@@ -469,6 +475,11 @@ const getTargetHTML = function(elem) {
 document.querySelectorAll('[data-show-id]').forEach(function(elem) {
   const html = getTargetHTML(elem);
   elem.onclick = basicLightbox.create(html).show;
+});
+
+document.querySelectorAll('[data-show-id-white]').forEach(function(elem) {
+  const html = getTargetHTML(elem);
+  elem.onclick = basicLightbox.create(html, { className: 'modal--white' }).show;
 });
 
 //

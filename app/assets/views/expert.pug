@@ -23,7 +23,7 @@ section.expert
 
         .expert__button-wrap
           .expert__button-desc Хотите задать вопрос эксперту?
-          .expert__button.btn.btn--arrow.btn--medium Задать вопрос эксперту
+          a.expert__button.btn.btn--arrow.btn--medium(href='#!' data-show-id-white='expert') Задать вопрос эксперту
 
 section.expert-about
   .container
@@ -88,6 +88,8 @@ section.expert-courses
                
 section.expert-recomended
   h2.title-lined Павла Шмелева рекомендуют
+
+include inc/modal-expert.pug
 include inc/footer.pug
 +footer
 include inc/foot.pug

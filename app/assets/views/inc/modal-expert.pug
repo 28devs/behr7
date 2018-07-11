@@ -1,0 +1,32 @@
+.modal.modal--addreview(data-id='expert')
+  .modal__close(onclick='closeModal()')
+
+  .modal__content
+    .modal__title Стать экспертом
+
+    form.form.footer__form(action='#!')
+      .input-group.input-group--squared
+        input.input-group__item(type='text' name='name' placeholder='Имя')
+      .row
+        .col-6.col-lg-6
+          .input-group.input-group--squared
+            input.input-group__item(type='text' name='name' placeholder='Фото')
+        .col-6.col-lg-6
+          .input-group.input-group--squared
+            input.input-group__item(type='text' name='name' placeholder='Ссылка на соцсеть')
+        .col-6.col-lg-6
+          .input-group.input-group--squared
+            input.input-group__item(type='text' name='name' placeholder='Телефон')
+        .col-6.col-lg-6
+          .input-group.input-group--squared
+            input.input-group__item(type='text' name='name' placeholder='E-mail')
+      
+      .input-group.input-group--squared
+        textarea.input-group__item(type='text' name='name' placeholder='Резюме')
+
+      .input-group.input-group--squared
+        input.input-group__item(type='text' name='name' placeholder='Ссылка на видеоотзыв (если есть)')
+
+      .input-group
+        button.footer__btn.btn.btn--arrow.btn--medium Отправить
+  
