@@ -385,7 +385,7 @@ if (aboutSlider) {
 // expert certifica
 //
 
-const expertCertSlider = document.querySelector('.about__gallery .glide');
+const expertCertSlider = document.querySelector('.expert-certificate .glide');
 
 if (expertCertSlider) {
   var expertCertSliderInit = false;
