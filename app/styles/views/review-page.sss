@@ -1,0 +1,72 @@
+.review
+  margin-top: 20px @md 40px @lg 50px
+
+  &__title
+    text: 500 center 26px @md 36px
+    margin-bottom: 20px @md 40px @lg 50px
+
+  &__list
+    box: space-between wrap
+
+    &-item
+      width: 100% @md calc(50% - 10px)
+      margin-bottom: 20px
+
+  &__btn
+    
+    &-wrap
+      margin: 30px 0 50px
+      text: center
+
+  &__press
+    background: #0e405a resolve('review/press-bg.jpg') center / cover
+    padding: 30px 0 @md 50px 0 @lg 60px 0
+
+    &-title
+      text: center #fff 26px @md 32px @lg 36px
+      margin-bottom: 20px @md 30px @lg 50px
+
+    &-content
+      margin: 0 @md 0 20px @xl 0 210px 0 20px
+
+    &-item
+      background: #fff
+      padding: 20px @md 30px 20px @xl 45px 20px 
+      border-radius: 5px
+      box: top left
+      flex-wrap: wrap @md nowrap
+      position: relative
+      text-decoration: none
+
+      & + &
+        margin-top: 20px
+
+      &-title
+        text: #1a1a18 500 20px 1.2
+        margin-bottom: 15px @md 20px
+        text-decoration: none
+
+      &-text
+        text: #6d6e68 14px 1.5
+        text-decoration: none
+
+    &-img
+      display: block
+      width: 100%
+
+      &-wrap
+        min-width: 100% @md 280px @xl 358px
+        position: relative @xl static
+        margin-bottom: 15px @md 0
+
+    &-logo
+      display: block
+      width: 100%
+      max-width: 159px
+
+      &-wrap
+        position: absolute auto 0 0 0 @xl absolute 45px 45px auto  auto 
+        background: rgba(255, 255, 255, 0.78)
+        width: 100px @md 100% @lg 100px @xl 140px
+        padding: 10px @md 20px 0 0 0 @lg 10px @xl 0
+        transform: none @md translateY(100%) @lg none

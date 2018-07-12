@@ -4,6 +4,9 @@
 .basicLightbox
   background: rgba(9, 60, 87, 0.87)
 
+  .modal
+    display: block
+
   &__placeholder
     width: 100%
 
@@ -11,6 +14,10 @@
   background: #fafafa
   position: relative
   margin: 0 auto
+  display: none
+
+  &--white
+    background: rgba(255, 255, 255, 0.87)
 
   &--recall
     width: 100% @lg 750px
@@ -21,8 +28,37 @@
     background-position: left bottom
     background-repeat: no-repeat
 
+  &--addreview
+    background: $secondary
+    width: 100% @lg 750px
+    box-sizing: border-box
+    max-width: 510px @md 750px
+    padding: 25px 20px 30px 20px @sm 30px 40px @md 30px 120px 40px
+
+    & ^&__title
+      text: center #fff @md-down 24px 
+      margin-bottom: 12px @md 0
+
+    & ^&__close
+      background: svg-load('icons/close.svg' fill: #fff) center / contain
+
+    .btn
+      margin: 10px auto 0
+
+    .input-group
+      margin-top: 8px @sm 10px @md 14px @lg 20px
+
+      &__item
+        padding: 12px 18px @sm 12px 20px @md  13px 25px
+
+    .col-6
+      padding: 0 4px @sm 0 5px @md 0 7px @lg 0 10px
+
+    .row
+      margin: 0 -4px @sm 0 -5px @md 0 -7px @lg 0 -10px
+
   &__close
-    background: svg-load('icons/close.svg') center / contain
+    background: svg-load('icons/close.svg' fill: #000) center / contain
     size: 16px @md 23px
     position: absolute 20px 20px null null
     cursor: pointer

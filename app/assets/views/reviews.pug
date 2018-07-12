@@ -1,0 +1,80 @@
+include inc/head.pug
+include inc/header.pug
+
+.review
+  .review__container.container
+    main.review__main
+      .review__title Отзывы
+
+      .review__list
+        each i in [1,2,3,4]
+          .review__list-item
+            iframe(width="700px" height="394" src="https://www.youtube.com/embed/NK2_bcQcoD4" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen data-basicLightbox data-id='videoId-'+i)
+
+            .reviews__card
+              .reviews__card-img
+                img.reviews__card-img-item(src='img/home/review-1.jpg')
+              .reviews__card-title= reviews[0].title
+              .reviews__card-desc= reviews[0].desc
+              a.reviews__card-link.link(href='#!')= reviews[0].link
+
+              .reviews__card-body
+                .reviews__card-text= reviews[0].text
+
+                .reviews__card-video(data-show-id='videoId-'+i)
+                  img.reviews__card-video-item(src='img/home/video-1.jpg')
+
+
+      .review__btn-wrap
+        a.btn.btn--medium.btn--arrow.review__btn(href='#!' data-show-id-white='addReview') Добавить отзыв
+
+  .about__gallery.about__gallery--review
+    .container
+      .about__gallery-title Благодарственные письма
+      .glide
+        .glide__track(data-glide-el='track')
+          .about__gallery-slides.glide__slides
+            .about__gallery-item
+              img.about__gallery-img(src='img/review/img-1.jpg')
+            .about__gallery-item
+              img.about__gallery-img(src='img/review/img-2.jpg')
+            .about__gallery-item
+              img.about__gallery-img(src='img/review/img-3.jpg')
+            .about__gallery-item
+              img.about__gallery-img(src='img/review/img-4.jpg')
+
+        .glide__arrows(data-glide-el='controls')
+          button.glide__arrows-item.glide__arrows-item--prev(data-glide-dir='<')
+          button.glide__arrows-item.glide__arrows-item--next(data-glide-dir='>')
+
+  .review__press
+    .container
+      .review__press-title Пресса о нас
+
+      a.review__press-item(href='#!')
+        .review__press-img-wrap
+          img.review__press-img(src='img/review/press-1.jpg')
+
+          .review__press-logo-wrap
+            img.review__press-logo(src='img/review/press-logo-1.png')
+
+        .review__press-content
+          .review__press-item-title Открылась Национальная Академия HR специалистов
+          .review__press-item-text Специалист по работе с персоналом — HR-менеджер (специалист по кадрам). Предприятия иногда передают некоторые функции по управлению персоналом специализированным кадровым агентствам. Например, могут передаваться кадровым агентствам функции, связные с приёмом сотрудников на работу, активно развивается деятельность кадровых агентств по оперативной работе.
+
+      .review__press-item
+        .review__press-img-wrap
+          img.review__press-img(src='img/review/press-2.jpg')
+
+          .review__press-logo-wrap
+            img.review__press-logo(src='img/review/press-logo-2.png')
+
+        .review__press-content
+          .review__press-item-title Открылась Национальная Академия HR специалистов
+          .review__press-item-text Специалист по работе с персоналом — HR-менеджер (специалист по кадрам). Предприятия иногда передают некоторые функции по управлению персоналом специализированным кадровым агентствам. Например, могут передаваться кадровым агентствам функции, связные с приёмом сотрудников на работу, активно развивается деятельность кадровых агентств по оперативной работе.
+
+
+include inc/modal-addreview.pug
+include inc/footer.pug
++footer
+include inc/foot.pug

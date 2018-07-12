@@ -168,6 +168,8 @@ section.reviews
           .glide__slides
             for item in reviews
               .glide__slide
+                iframe(width="700px" height="394" src="https://www.youtube.com/embed/NK2_bcQcoD4" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen data-basicLightbox data-id='videoId')
+
                 .reviews__card
                   .reviews__card-img
                     img.reviews__card-img-item(src='img/home/review-1.jpg')
@@ -178,7 +180,7 @@ section.reviews
                   .reviews__card-body
                     .reviews__card-text= item.text
 
-                    .reviews__card-video
+                    .reviews__card-video(data-show-id='videoId')
                       img.reviews__card-video-item(src='img/home/video-1.jpg')
 
           .glide__arrows(data-glide-el='controls')

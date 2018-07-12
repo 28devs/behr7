@@ -1,0 +1,36 @@
+.modal.modal--addreview(data-id='addReview')
+  .modal__close(onclick='closeModal()')
+
+  .modal__content
+    .modal__title Добавить отзыв
+
+    form.form.footer__form(action='#!')
+      .row
+        .col-6.col-lg-6
+          .input-group.input-group--squared
+            input.input-group__item(type='text' name='name' placeholder='Имя')
+        .col-6.col-lg-6
+          .input-group.input-group--squared
+            input.input-group__item(type='text' name='name' placeholder='Возраст')
+        .col-6.col-lg-6
+          .input-group.input-group--squared
+            input.input-group__item(type='text' name='name' placeholder='Должность')
+        .col-6.col-lg-6
+          .input-group.input-group--squared
+            input.input-group__item(type='text' name='name' placeholder='Ссылка на соцсеть')
+        .col-6.col-lg-6
+          .input-group.input-group--squared
+            input.input-group__item(type='text' name='name' placeholder='Телефон')
+        .col-6.col-lg-6
+          .input-group.input-group--squared
+            input.input-group__item(type='text' name='name' placeholder='E-mail')
+      
+      .input-group.input-group--squared
+        textarea.input-group__item(type='text' name='name' placeholder='Отзыв')
+
+      .input-group.input-group--squared
+        input.input-group__item(type='text' name='name' placeholder='Ссылка на видеоотзыв (если есть)')
+
+      .input-group
+        button.footer__btn.btn.btn--arrow.btn--medium Отправить сообщение
+  
