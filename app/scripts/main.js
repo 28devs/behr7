@@ -175,6 +175,63 @@ if (gallerySlider) {
 }
 
 //
+// Expert gallery slider
+//
+
+const galleryExpertSlider = document.querySelector('.expert-gallery__photos-slider .glide');
+
+if (galleryExpertSlider) {
+  var galleryExpertSliderInit = false;
+
+  const galleryExpertSliderFn = function() {
+    if (window.innerWidth < 768) {
+      if (!galleryExpertSliderInit) {
+        galleryExpertSliderInit = new Glide(galleryExpertSlider, {
+          perView: 1,
+          gap: 20,
+          peek: {
+            after: 30,
+            before: 0
+          },
+          breakpoints: {
+            385: {
+              perView: 1,
+              peek: {
+                after: 30,
+                before: 0
+              }
+            },
+            580: {
+              perView: 1,
+              peek: {
+                after: 30,
+                before: 0
+              }
+            },
+            991: {
+              perView: 1,
+              peek: {
+                after: 30,
+                before: 0
+              }
+            }
+          }
+        }).mount();
+      }
+    } else {
+      // destroy slider if init
+      if (typeof galleryExpertSliderInit === 'object') {
+        galleryExpertSliderInit.destroy();
+        galleryExpertSliderInit = false;
+      }
+    }
+  };
+
+  galleryExpertSliderFn();
+  window.addEventListener('resize', galleryExpertSliderFn);
+}
+
+//
 // Experts slider
 //
 
@@ -202,6 +259,33 @@ if (expertsSlider) {
   const expertsSliderG = new Glide(expertsSlider, expertsSliderOpt).mount();
 }
 
+//
+// expert mini-preson slider
+//
+
+const expertRecomendedSlider = document.querySelector('.expert-recomended .glide');
+
+if (expertRecomendedSlider) {
+  const expertRecomendedSliderOpt = {
+    type: 'carousel',
+    perView: 4,
+    gap: 20,
+    breakpoints: {
+      385: {
+        perView: 1,
+        gap: 0,
+        peek: {
+          after: 0,
+          before: 0
+        }
+      },
+      580: { perView: 2, peek: 0 },
+      991: { perView: 3, peek: 0 },
+      1200: { perView: 4 }
+    }
+  };
+  const expertRecomendedSliderG = new Glide(expertRecomendedSlider, expertRecomendedSliderOpt).mount();
+}
 //
 // Subscribe block in blog page on mobile
 //

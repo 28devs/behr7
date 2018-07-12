@@ -1,9 +1,19 @@
-mixin expert-preview(data, btn)
-  .expert-preview
-    .expert-preview__img-wrap 
-      img.expert-preview__img(src='img/experts/avatar-' +data.item+ '.jpg', alt="")
-    .expert-preview__name= data.name 
-    .expert__desc= data.desc
+mixin expert-preview(data, btn, mini)
+  if mini
+    .expert-preview.expert-preview--mini
+      .expert-preview__img-wrap 
+        img.expert-preview__img(src='img/experts/avatar-' +data.item+ '.jpg', alt="")
+      .expert-preview__name= data.name 
+      .expert-preview__desc= data.desc
 
-    if btn
-      a.expert-preview__link.btn.btn--small.btn--outline.btn--arrow.btn--arrow-long Подробнее
+      if btn
+        a.expert-preview__link.btn.btn--small.btn--outline.btn--arrow.btn--arrow-long Подробнее
+  else
+    .expert-preview
+      .expert-preview__img-wrap 
+        img.expert-preview__img(src='img/experts/avatar-' +data.item+ '.jpg', alt="")
+      .expert-preview__name= data.name 
+      .expert-preview__desc= data.desc
+
+      if btn
+        a.expert-preview__link.btn.btn--small.btn--outline.btn--arrow.btn--arrow-long Подробнее

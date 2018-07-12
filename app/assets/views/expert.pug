@@ -87,7 +87,71 @@ section.expert-courses
             .course__title= item.title
                
 section.expert-recomended
-  h2.title-lined Павла Шмелева рекомендуют
+  .title-lined 
+    h2.title-lined__title Павла Шмелева рекомендуют
+
+  .container
+    .expert-recomended__slider
+      .glide
+        .glide__track(data-glide-el='track')
+          .glide__slides
+            each data in expertsRecomended
+              .glide__slide
+                +expert-preview(data, false, true)
+
+        .glide__arrows.glide__arrows--side(data-glide-el='controls')
+          button.glide__arrows-item.glide__arrows-item--prev.glide__arrows-item--gray(data-glide-dir='<')
+          button.glide__arrows-item.glide__arrows-item--next.glide__arrows-item--gray(data-glide-dir='>')
+
+    .expert-recomended__btn-wrap
+      a.experts__btn.btn.btn--medium.btn--arrow(href="!#") Связаться с экспертом
+
+section.expert-articles
+
+  .title-lined 
+    h2.title-lined__title Мысли эксперта в блоге
+
+  .container
+    .expert-articles__wrap
+      article.blog__article.blog__article--video
+        a.blog__article-link(href='#!')
+          img.blog__article-img(src='img/img-3.jpg')
+          .blog__article-title= blog[0].title
+          .blog__article-text= blog[0].text
+          .blog__article-info
+            .blog__article-date= blog[0].date
+            .blog__article-comments 4
+            .blog__article-views 28
+
+      each data in [1,2,3]
+        article.blog__article
+          a.blog__article-link(href='#!')
+            img.blog__article-img(src='img/img-3.jpg')
+            .blog__article-title= blog[0].title
+            .blog__article-text= blog[0].text
+            .blog__article-info
+              .blog__article-date= blog[0].date
+              .blog__article-comments 4
+              .blog__article-views 28
+        
+    .expert__button-wrap
+      a(href='!#').expert__button.btn.btn--arrow.btn--medium Смотреть все статьи
+
+section.expert-gallery
+  .container
+    .expert-gallery__photos-slider
+      .glide
+        .glide__track(data-glide-el='track')
+          .glide__slides
+            each i in [1,2,3,4,5]
+              .glide__slid
+                img(width="1400" height="900" src="https://placehold.it/1400x900" data-basicLightbox data-id="0")
+                a.about__photos-slide(href='#!' data-show-id='0')
+                  img.about__photos-slide-img(src='img/expert/expert-gallery-'+i+'.jpg')
+
+        .glide__arrows(data-glide-el='controls')
+          button.glide__arrows-item.glide__arrows-item--prev.glide__arrows-item--gray.glide__arrows-item--mobile-only(data-glide-dir='<')
+          button.glide__arrows-item.glide__arrows-item--next.glide__arrows-item--gray.glide__arrows-item--mobile-only(data-glide-dir='>')
 include inc/footer.pug
-+footer
++footer('short')
 include inc/foot.pug

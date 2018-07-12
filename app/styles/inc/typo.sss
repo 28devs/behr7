@@ -31,14 +31,22 @@ body
     background: #fff
 
 .title-lined
-  text: #000 22px * 500 @md 36px
-  box: horizontal center middle nowrap
+  box: horizontal center bottom nowrap
+  padding: 20px 0
+  margin: 0px 0 15px @md 10px 0 10px @lg 40px 0 60px
+
+  &__title
+    text: #000 22px * 500 @md 36px
+    flex-grow: 0
+    margin: 0 15px
 
   &:before, &:after
     content: ''
-    width: 100%
+    flex-grow: 100
     background-color: #43b59b
-    display: inline-block
+    display: none @md inline-block
+    height: 5px
+    margin-bottom: 15px
 
 .icon-text
   text: 15px 1

@@ -170,7 +170,7 @@
 
 .expert-courses
   background-color: #093c57
-  padding: 20px 0 @md 30px 0
+  padding: 20px 0 @md 30px 0 50px
 
   &__title
     text-align: center
@@ -185,3 +185,29 @@
     box-sizing: border-box
     width: 100% @md 50% 
     padding: 5px 10px @md 10px 10px
+
+.expert-recomended
+
+  &__btn-wrap
+    text-align: center
+    padding: 20px 0 @lg 35px 0 0px
+
+  & .glide__arrows
+    margin-top: 60px @xl 0
+
+.expert-articles
+
+  &__wrap
+    box: space-between wrap
+
+    & .blog__article
+      width: 100% @sm 42% @md 32% @lg 23%
+    
+      &:last-child
+        display: block @md none @lg block
+
+.expert-gallery
+  padding: 80px 0 40px
+
+  & .about__photos-slide-img
+    max-height: 300px
