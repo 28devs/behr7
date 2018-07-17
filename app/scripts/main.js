@@ -231,6 +231,22 @@ if (galleryExpertSlider) {
   window.addEventListener('resize', galleryExpertSliderFn);
 }
 
+
+//
+// Events slider
+//
+
+const eventsSlider = document.querySelector('.events__events-slider .glide');
+
+if (eventsSlider) {
+  const eventsSliderOpt = {
+    type: 'carousel',
+    perView: 1,
+  };
+  const eventsSliderG = new Glide(eventsSlider, eventsSliderOpt).mount();
+}
+
+
 //
 // Experts slider
 //
@@ -649,3 +665,31 @@ if (stickyNav) {
   window.addEventListener('scroll', headerScroll);
   window.addEventListener('resize', headerScroll);
 }
+
+//
+// Custom select
+//
+
+var select = new CustomSelect({
+    elem: 'select'
+});
+
+var selectCities = new CustomSelect({
+  elem: 'select-events'
+});
+
+//
+// Calendar
+//
+
+const element = document.getElementById('calendar');
+
+new niceDatePicker({
+  dom: document.getElementById('calendar'),
+  onClickDate: function(date, elem){
+    console.log(date)
+  },
+  mode: 'en',
+  plainEvent: ['2018/7/20', '2018/7/19', '2018/7/17']
+});
+

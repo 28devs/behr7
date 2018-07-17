@@ -1,0 +1,343 @@
+.course
+  background: #fff
+  box: left center
+  box-sizing: border-box
+  padding: 16px
+
+  &--table
+    box: center
+    flex-wrap: @md-down wrap
+    text-decoration: none
+    margin-bottom: 5px
+    margin-right: 20px
+    display: @md-down block
+    padding: 18px @md 10px @lg 16px
+
+    &:last-child
+      margin-bottom: 0
+
+    & > :nth-child(1)
+      width: 100%
+      max-width: 25% @md 12% @lg 10%
+      float: @md-down left
+      margin-left: @md-down 10px
+
+
+      img
+        width: 100%
+        max-width: 60px
+
+    & > :nth-child(2)
+      width: 100%
+      max-width: 75% @md 26% @lg 34%
+      box-sizing: border-box
+      padding-right: 15px
+      margin-left: @md-down 30%
+
+    & > :nth-child(3)
+      width: 100%
+      max-width: 75% @md 22% @lg 18%
+      margin-left: @md-down 30%
+
+    & > :nth-child(4)
+      width: 100%
+      max-width: 75% @md  22% @lg 18%
+      margin-left: @md-down 30%
+
+    & > :nth-child(5)
+      width: 100%
+      max-width: 20%
+    
+  &__img-wrap
+    margin-right: 34px
+    size: 60px
+
+  &__title
+    text: #000 18px
+
+    &--bold
+      font-weight: 500
+      font-size: 15px @lg 16px
+
+  &__date
+    text: #000 14px @lg 16px
+
+  &__speacker
+    text: #000 14px @ 15px
+
+  &__btn
+    text-transform: none
+    text: 14px @md 14px @lg 16px
+    display: @md-down none
+    padding: @lg-down 8px 11px
+    
+.courses
+  background: url('../img/courses/courses-bg.jpg') no-repeat center / cover
+  position: relative
+  height: 640px @md 766px
+
+  &:after
+    content: ''
+    position: absolute 0 0 0 0
+    background-color: #093c57
+    opacity: .9
+    z-index: 0
+
+  &__table
+    z-index: 1
+    position: relative
+
+  &__table-head
+    display: @md-down none
+    width: 100%
+    box: bottom center
+    box-sizing: border-box
+    padding: 35px 16px 30px
+    text: #fff 15px * 300 @lg 17px 
+
+    & > :nth-child(1)
+      max-width: 12% @lg 10%
+      width: 100%
+
+    & > :nth-child(2)
+      max-width: 26% @lg 34%
+      width: 100%
+
+    & > :nth-child(3)
+      max-width: 22% @lg 18%
+      width: 100%
+
+    & > :nth-child(4)
+      max-width: 22% @lg 18%
+      width: 100%
+
+    & > :nth-child(5)
+      max-width: 20%
+      width: 100%
+
+  &__table-body
+    max-height: 612px
+
+  
+.shedule
+  padding: 40px 0 0
+
+  &__cities
+    padding: 40px
+    background-color: @md-down #214f67
+  
+  &__title
+    text-align: center
+    text: 26px * 500 @md 36px
+    margin-bottom: 40px
+
+  &__menu
+    justify-content: space-between
+    background-color: #f5f5f5
+    border-radius: 25px
+    display: none @lg flex
+
+    &-item
+      padding: 13px 0
+      flex-grow: 1
+      text-align: center
+      text: 16px
+      border-radius: 25px
+      background-color: transparent
+      transition: $transition
+      cursor: pointer
+
+      &:hover, &--active
+        background-color: #093c57
+        color: #fff
+
+        &:first-child:before
+          background: svg-load('courses/web.svg' fill: #fff)
+    
+      &:first-child 
+        font-weight: 600
+
+        &:before
+          content: ''
+          display: inline-block
+          margin: 0 8px -2px 0
+          background: svg-load('courses/web.svg' fill: #43B59B) no-repeat
+          size: size('courses/web.svg')
+          transition: $transition
+
+  &__select
+    display: block @lg none
+    text-align: center
+
+.simplebar-track
+  background-color: #fff
+  width: 4px
+  right: 5px
+
+
+.simplebar-scrollbar
+  width: 10px
+  right: -3px
+
+.simplebar-scrollbar:before 
+  background-color: #27a286
+  top: 0
+  bottom: 0
+  border-radius: 10px
+
+.simplebar-track:hover .simplebar-scrollbar:before, .simplebar-track .simplebar-scrollbar.visible:before
+  opacity: 1
+
+.simplebar-track.vertical .simplebar-scrollbar:before
+  top: -1px
+  bottom: -1px
+
+.simplebar-track.horizontal
+  display: none
+
+
+
+.events
+  padding: 55px 0
+  padding-bottom: @lg-down 0
+
+  &__events
+    display: @sm-down none
+
+  &__title
+    text: #000 26px * 500 @md 36px
+    text-align: center
+    margin-bottom: 35px
+
+  &__wrap
+    box: vertical space-between @lg horizontal
+    margin: 0 @lg 0 -20px
+
+  &__side
+    width: 100% @lg 33%
+    padding: 0 @lg 0 20px
+    box-sizing: border-box
+    order: @lg-down 2
+
+  &__select
+    display: block @lg none
+    text-align: center
+    margin-bottom: 25px
+
+  &__calendar
+    display: none @lg block
+
+  &__main
+    width: 100% @lg 67%
+    padding: 0 @lg 0 20px
+    box-sizing: border-box
+
+  &__item
+    padding: 40px 20px 45px 30px
+    background-color: #fafafa
+    border-bottom: solid #ebebeb 2px
+    box-sizing: border-box
+    white-space: @md-down initial
+    padding-bottom: @md-down 80px
+
+
+    &:last-child 
+      border: 0
+
+  &__head
+    box: space-between center
+    margin-bottom: 5px @md 20px
+
+  &__img-wrap
+    margin-right: 20px @md 10px
+
+  &__head-wrap
+    box: center
+
+  &__head-title
+    text: 24px * 500 @lg 19px @xl 24px
+    margin-bottom: @md-down 10px
+  
+  &__detail
+    text: 18px @lg 15px @xl 18px
+
+  &__place
+    display: @md-down block
+
+  &__translation
+
+    &:before
+      content: '+'
+      display: inline-block
+      color: #27a286
+      margin: 0 3px
+
+  &__traning
+
+    &:before
+      content: ''
+      background: svg-load('icons/online.svg') center no-repeat / contain
+      size: size('icons/online.svg')
+      display: inline-block
+      margin: 0 3px
+      margin-bottom: -3px
+
+
+  &__head-btn
+    text: 15px @lg 13px @xl 15px
+    padding: 9px 20px @lg 9px 16px @xl  9px 20px
+    white-space: nowrap
+    margin-top: @sm-down 24px
+    max-width: @sm-down 300px
+    width: @sm-down 100%
+
+    &:after
+      display: inline-block @lg none @xl inline-block
+
+  &__form-action
+    background: #043d8a url(../img/home/blog-new-action-bg.jpg) center / cover
+    height: 100%
+    border-radius: 0
+    margin-left: 0
+    margin-bottom: 0 @lg 35px
+    padding: 40px 30px 80px
+    box-sizing: border-box
+
+    & .blog-new__action-title
+      margin-bottom: 30px @lg 60px
+      text-align: center
+
+    & .blog-new__action-form
+      display: @lg-down flex
+      flex-wrap: @lg-down wrap
+      justify-content: @lg-down space-between
+    
+    & .input-group
+      width: @lg-down 48%
+
+      &:last-of-type
+        width: @lg-down 100%
+
+        & .btn
+          max-width: @lg-down 300px
+
+  &__btn-wrap
+    text-align: center
+    margin: 28px 0
+
+  &__btn-desc
+    text: 17px * 500 @md 21px
+    margin-bottom: 15px
+
+  &__btn
+    max-width: 300px
+    width: 100%
+    box-sizing: border-box
+    white-space: nowrap
+
+  &__events-slider
+    display: block @sm none
+
+    & .glide__arrows
+      margin-top: -7px
+      z-index: 99

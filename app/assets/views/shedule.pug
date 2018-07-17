@@ -1,0 +1,149 @@
+include inc/head.pug
+include inc/header.pug
+
+section.shedule
+  .shedule__title Расписание
+
+  .shedule__cities
+    .container
+      .shedule__menu
+        .shedule__menu-item Онлайн
+        .shedule__menu-item Москва
+        .shedule__menu-item.shedule__menu-item--active Санкт-Петербург
+        each item in sheduleMenu
+          .shedule__menu-item= item
+
+      .shedule__select
+        .select
+          select#select
+            each item in sheduleSelect
+              option(value= item.val)= item.title
+        
+
+.courses
+  .container.container--full-md
+    .courses__table
+      .courses__table-head
+        .courses__table-head-item 
+        .courses__table-head-item Название
+        .courses__table-head-item Даты
+        .courses__table-head-item Преподаватель
+        .courses__table-head-item Программа
+
+      .courses__table-body(data-simplebar data-simplebar-auto-hide="false")
+        each item in coursesLong
+          a.course.course--table(href="#!")
+            .courses__table-body-item
+              .course__img-wrap
+                img.course__img(src="img/courses/course-img-" + item.number + ".png")
+            
+            .courses__table-body-item
+              p.course__title.course__title--bold= item.title
+
+            .courses__table-body-item
+              p.course__date= item.date
+
+            .courses__table-body-item
+              p.course__speacker= item.speacker
+
+            .courses__table-body-item
+              .course__btn.btn.btn--small.btn--arrow Подробнее
+              
+section.events
+
+  .events__title Календарь событий
+
+  .container.container--full-lg
+    .events__wrap
+      .events__side
+        .events__calendar
+          //- include inc/calendar.pug
+          #calendar
+        .events__form
+          .events__form-action
+            .blog-new__action-title Узнайте о новых программах
+
+            form.form.blog-new__action-form(action='#!')
+              .input-group
+                input.input-group__item(type='text' name='name' placeholder='Имя')
+              
+              .input-group
+                input.input-group__item(type='text' name='name' placeholder='E-mail')
+
+              .input-group
+                button.blog-new__action-btn.btn.btn--medium.btn--arrow Узнать
+
+
+      .events__main
+
+        .events__events
+          .events__select.select
+            select#select-events
+              option(value='12.08.18') 13 февраля 2018
+              option(value='18.08.18') 18 февраля 2018
+              option(value='14.09.18') 21 февраля 2018
+
+          each item in events
+            .events__item
+              .events__head
+                .events__head-wrap
+                  .events__img-wrap
+                    img.events__photo(src="img/courses/event-photo.png")
+                  
+                  .events__desc
+                    .events__head-title= item.title
+                    .events__detail
+                      span.events__place= item.date
+                      span.events__place= item.place
+                      
+                      if(item.transl)
+                        span.events__translation онлайн-трансляция
+                      
+                      if(item.traning)
+                        span.events__traning онлайн-тренинг
+
+                .events__head-btn-wrap
+                  a.events__head-btn.btn.btn--small.btn--arrow Записаться
+              .events__content= item.cont
+
+        .events__events-slider
+          .glide
+            .glide__track(data-glide-el='track')
+              .glide__slides
+                 each item in events
+                  .events__item.events__item--slider
+                    .events__head
+                      .events__head-wrap
+                        .events__img-wrap
+                          img.events__photo(src="img/courses/event-photo.png")
+                        
+                        .events__desc
+                          
+                          .events__detail
+                            span.events__place= item.date
+                            span.events__place= item.place
+                            if(item.transl)
+                              span.events__translation онлайн-трансляция
+                            
+                            if(item.traning)
+                              span.events__traning онлайн-тренинг
+
+                    .events__head-title= item.title  
+                    .events__content= item.cont
+
+                    .events__head-btn-wrap
+                      a.events__head-btn.btn.btn--small.btn--arrow Записаться
+
+            .glide__arrows.glide__arrows--side(data-glide-el='controls')
+              button.glide__arrows-item.glide__arrows-item--prev.glide__arrows-item--gray(data-glide-dir='<')
+              button.glide__arrows-item.glide__arrows-item--next.glide__arrows-item--gray(data-glide-dir='>')
+
+        .events__btn-wrap
+          .events__btn-desc Хотите узнать о всех доступных программах?
+          .events__btn.btn.btn--medium.btn--arrow В магазин программ
+
+
+include inc/modal-expert.pug
+include inc/footer.pug
++footer()
+include inc/foot.pug

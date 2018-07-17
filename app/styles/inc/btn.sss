@@ -104,3 +104,45 @@
       size: size('icons/arrow-short.svg')
       transform: rotate(-90deg) translateX(1px)
 
+.js-Select
+  width: 270px
+
+.js-Select-title
+  border: solid 1px #1e2f56
+  border-radius: 6px
+  outline: 0
+  text: 16px * 400
+  padding: 18px 25px
+  height: auto
+
+.js-Select-title:after
+  background: svg-load('icons/dropdown-arrow.svg') no-repeat center
+  size: size('icons/dropdown-arrow.svg')
+  border: none
+
+.js-Select-list
+  border: 1px solid #d9d9d9
+  border-radius: 6px
+  margin-top: 20px
+  text-align: left
+
+
+
+.js-Select-list li
+  text: 16px
+  border: none
+  padding: 11px 25px
+  background-color: transparent
+  transotion: $transition
+
+  &:first-child
+    padding-top: 22px
+
+  &:last-child
+    padding-bottom: 22px
+
+  &:hover
+    background-color: #f0f0f0
+
+  &.is-selected
+    background-color: #f0f0f0
