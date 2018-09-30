@@ -671,12 +671,52 @@ if (stickyNav) {
 //
 
 var select = new CustomSelect({
-    elem: 'select'
+    elem: 'select123'
 });
 
+var selectVal = select.change();
+console.log(selectVal)
 var selectCities = new CustomSelect({
   elem: 'select-events'
 });
+
+// function selectChange(elem) {
+//   var elem = elem,
+//       select = elem.nextSibling,
+//       elemOpt = elem.querySelectorAll('js-Select-list li'),
+//       selectVal;
+//   elemOpt.forEach(function(li) {
+//     li.addEventListener('click', function(e) {
+//       selectVal = select.value;
+//       return selectVal;
+//     });
+//   });
+// }
+// function selectChange(elem) {
+//   var elem = document.getElementById(id),
+//       select = elem.nextSibling,
+//       elemOpt = elem.querySelectorAll('js-Select-list li'),
+//       selectVal;
+//   console.log(elemOpt)
+//   elemOpt.forEach(function(li) {
+//     console.log(123)
+//     li.addEventListener('click', function(e) {
+//       selectVal = select.value;
+//       console.log(selectVal)
+//     });
+//   });
+
+// };
+
+// // dataselect.addEventListener('click', function(e) {
+// //   console.log(123)
+// // })
+// dataselect.addEventListener('input', function(e) {
+//   // var select = this.nextSibling;
+//   // console.log(select.value)
+//   console.log(this.value)
+// })
+
 
 //
 // Calendar
