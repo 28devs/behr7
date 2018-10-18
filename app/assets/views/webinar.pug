@@ -1,0 +1,63 @@
+include inc/head.pug
+include inc/header.pug
+
+section.training
+
+  .training__action
+    .container
+      .training__action-container
+        .training__action-info
+          .training__action-text Бесплатный вебинар.
+          .training__action-title 5 роковых ошибок HR или Базовые техники подбора персонала.
+          .training__action-date 18 июня в 18:00
+
+        .training__action-form
+          form(action='#')
+            .input-group.input-group--squared
+              input.input-group__item(type='text' name='name' placeholder='Имя')
+
+            .input-group.input-group--squared
+              input.input-group__item(type='text' name='phone' placeholder='Телефон')
+
+            .input-group.input-group--squared
+              input.input-group__item(type='text' name='email' placeholder='E-mail')
+
+            .input-group
+              button.btn(type='submit') Зарегистрироваться бесплатно
+
+
+  .training__pros.training__pros--simple
+    .container
+      .training__title.h2
+        | Почему вам нужен этот 
+        .title-mark вебинар?
+
+      .training__pros-list
+        each i in [1,2,3,4,5,6]
+          .training__pros-item
+            .training__pros--content
+              .training__pros-text Lorem ipsum dolor sit ametok. adipiscing elit. Nulla efficit. Quisque venenatis nulla orci.
+
+      .training__pros-btn
+        a.btn.btn--medium(href='#!') Зарегистрироваться бесплатно
+
+
+  .training__format
+    .container
+      .training__title.h2
+        .title-mark Формат
+        |  вебинара
+
+      .training__format-list
+        each i in ['23 марта / четверг', 'В 14:00 (по МСК)', 'В прямом эфире (записи не будет)', 'Участие абсолютно бесплатно']
+          .training__format-item
+            .training__format-text= i
+
+      .training__format-btn
+        a.btn.btn--medium(href='#!') Зарегистрироваться бесплатно
+
+include inc/modal-recall.pug
+
+include inc/footer.pug
++footer
+include inc/foot.pug

@@ -1,0 +1,830 @@
+.training-block
+  padding: 30px 0 @md 40px 0 @lg 50px 0
+
+.training-borders
+  border: 2px solid #dbdbdb
+  border-width: 2px 0 2px 0
+
+.btn-blank
+  background: transparent
+  border: 0
+  padding: 0
+  cursor: pointer
+  outline: none
+
+.training
+  margin-top: 17px
+
+  &__title
+    margin-bottom: 40px @md 45px @lg 50px @xl 70px
+    text: 500 center
+
+  &__banner
+    background: resolve('training/bg.jpg') center / cover
+    padding: 15px @md 25px
+    box: vertical space-between center
+    height: 240px @md 320px @lg 400px @xl 496px
+
+    &-title
+      text: $secondary center 22px 1.2 bold @md 30px @lg 36px
+
+      &--color
+        text: $primary
+        display: inline-block
+
+      &--wrap
+        display: inline-block
+
+  &__action
+
+    &-container
+      background: resolve('training/bg-format.jpg') center / cover
+      padding: 20px 15px @md 40px 32px @lg 90px 72px
+      border-radius: 7px
+      margin-bottom: 35px
+      box: vertical center @lg space-between horizontal
+      text: center @lg left
+
+    &-info
+      width: 100% @lg 50%
+
+    &-form
+      width: 100% @lg 400px
+      margin-top: 20px @lg 0
+      max-width: 300px @xl 400px
+
+    &-text
+      text: $secondary 20px 1.3 @md 24px @lg 28px @xl 33px
+
+    &-title
+      text: $secondary 26px 1.3 bold @md 28px @lg 32px @xl 38px
+      margin: 10px 0 @md 20px 0
+
+    &-date
+      text: $secondary 28px 1.3 bold @md 30px @lg 35px @xl 41px
+
+    .input-group__item
+      box-shadow: 0px 0px 6.64px 1.36px rgba(66, 181, 155, 0.38)
+
+  &__info
+    padding: 15px 0
+    margin: 20px 0 25px
+    border: 1px solid #dbdbdb
+    border-width: 1px 0 1px 0
+
+    &-container
+      box: center space-between
+      flex-wrap: @md-down wrap
+
+    &-date
+      text: $secondary center 20px 1 bold @md 21px @lg 22px
+      text-transform: uppercase
+      margin: 10px 0 @md 0
+
+  &__video-block
+    box: center
+    flex-wrap: @md-down wrap
+    margin: 35px 0
+
+    &-text
+      text: $secondary 16px 1.2 @lg 18px @xl 22px
+      max-width: 680px
+      margin-right: @md 30px
+      margin-bottom: 20px @md 0
+
+    &-iframe
+      display: block
+      width: 100%
+
+    &-wrap
+      border-radius: 5px
+      background: #252525
+      overflow: hidden
+      max-width: 100% @md 230px @lg 420px
+      width: 100%
+
+  &__nav
+    @extend .training-borders
+    padding: 20px 0
+
+    &-container
+      box: middle @md space-between
+      flex-wrap: @md-down wrap
+
+    &-elem
+      text: #000 14px 1 bold @md 16px @xl 18px
+      text-transform: uppercase
+      text-decoration: none
+      padding: 10px 10px @md 10px 0
+
+    &-separator
+      border-left: 2px solid #dbdbdb
+
+      &:last-child
+        display: none
+
+  &__for-who
+    @extend .training-block
+    background: #f3f3f3
+
+    &-tabs
+      box: middle
+
+    &-tab
+      text: #000 12px 1.4 bold center @md 16px left @lg 18px @xl 25px
+      box: vertical center @md horizontal center middle
+      text-decoration: underline
+      cursor: pointer
+      width: 32%
+
+      br
+        display: @md-down none
+
+      &.tabs--active
+        text-decoration: none
+
+      &:before
+        content: ''
+        display: block
+        size: 50px @lg 90px @xl 110px
+        min-width: 50px @lg 90px @xl 110px
+        border-radius: 110px
+        margin-right: 0 @md 11px
+        background-size: contain
+        margin-bottom: 10px @md 0
+
+      @for $i from 1 to 3
+        &:nth-child($i):before
+          background-image: resolve('training/for-who-$i.png')
+
+      & + &
+        margin-left1: 30px @md 40px @lg 50px
+
+    &-tab-content
+      margin-top: 30px @md 50px
+      display: none
+
+      &.tabs--active
+        display: block @md flex
+        align-items: end
+
+      &:after
+        content: ''
+        display: block
+        clear: both
+
+    &-img
+      margin-right: 30px @xl 50px
+      margin-bottom: 20px @md 0
+      width: 100% @md 40% @xl auto
+
+    &-text
+      text: $secondary 16px 1.2 @md 18px @lg 20px @xl 22px
+
+      & + &
+        margin-top: 20px
+
+  &__program
+    @extend .training-block
+    @extend .training-borders
+
+    &-item
+      padding: 20px @md 30px 30px 27px 30px @xl 30px 50px 37px 50px
+      background: #fff
+      filter: drop-shadow(0 2px 6px rgba(0, 0, 0, 0.2))
+      border-radius: 5px
+      position: relative
+
+      &:nth-child(odd)
+        ^^&-content
+          padding-left: 0 @md 38px
+          padding-right: 0 @md 90px @xl 150px
+
+        ^^&-modul
+          right: -91px
+          left: auto
+
+        &:after
+          right: 0
+          left: auto
+          transform: translate(-47px, 58px)
+
+      & + &
+        margin-top: 50px
+
+      &:not(:last-child):before
+        content: ''
+        display: block
+        position: absolute null null 0 50%
+        transform: translate(-50%, 100%)
+        width: 0
+        height: 0
+        border-style: solid
+        border-width: 24px 21.5px 0 21.5px
+        border-color: #ffffff transparent transparent transparent
+
+      &:after
+        content: ''
+        display: block
+        position: absolute 0 null null 0
+        background: resolve('icons/hat.png')
+        size: size('icons/hat.png')
+        transform: translate(42px, 58px)
+        display: none @md block
+
+    &-title
+      text: $secondary 18px 1.4 bold uppercase center @md 22px @xl 25px
+      margin-bottom: 25px
+
+    &-content
+      box: left
+      flex-wrap: @lg-down wrap
+      padding-left: 0 @md 130px @xl 150px
+
+    &-modul
+      text: #000 35px 1.4 bold uppercase
+      position: absolute 280px null null 38px
+      transform: rotate(-90deg)
+      transform-origin: left top 0
+      size: 180px 50px
+      pointer-events: none
+      display: none @md block
+
+    &-info
+      box: wrap
+
+      &-title
+        text: $secondary 18px 1 bold @md 20px @xl 22px
+        padding-right: 20px
+
+        &--first
+          width: 100% @lg 156px
+          margin-bottom: @lg-down 10px
+
+          &:before
+            content: ''
+            display: block
+            position: absolute
+            transform: translate(-40px, -3px)
+            background: resolve('icons/book.png')
+            size: size('icons/book.png')
+            display: none @md block
+
+        &--last
+          width: 100% @lg 130px
+          margin-top: 20px
+
+          &:before
+            content: ''
+            display: block
+            position: absolute
+            transform: translate(-40px, -3px)
+            background: resolve('icons/medal.png')
+            size: size('icons/medal.png')
+            display: none @md block
+
+      &-list
+        width: 100% @lg calc(100% - 160px)
+
+        &:last-child
+          margin-top: 10px @lg 20px
+
+    &-img
+      display: block
+      border-radius: 3px
+      margin-top: @lg-down 20px
+      max-width: 100%
+
+  &__format
+    @extend .training-block
+
+    &-list
+      box: space-between
+      flex-wrap: wrap
+
+    &-item
+      width: 45% @md 20%
+      text: center
+      margin-bottom: 20px @md 0
+
+      &:before
+        content: ''
+        display: block
+        background-size: contain
+        background-repeat: no-repeat
+        background-position: center
+        size: 100% 45px @md 100% 85px
+        margin: 0 auto
+        margin-bottom: 17px
+
+      &:nth-child(1):before
+        background-image: resolve('icons/format-calendar.png')
+
+      &:nth-child(2):before
+        background-image: resolve('icons/format-clock.png')
+
+      &:nth-child(3):before
+        background-image: resolve('icons/format-mic.png')
+
+      &:nth-child(4):before
+        background-image: resolve('icons/format-free.png')
+
+    &-text
+      text: $secondary 16px 1.3 500 @md 20px @xl 22px
+
+    &-btn
+      text-align: center
+      margin-top: 20px @md 40px
+
+  &__pros
+    background: resolve('training/bg-2.jpg') center / cover
+    @extend .training-block
+
+    &--simple
+      background: #eaeaea
+      @extend .training-borders
+
+      ^&-item
+        width: 100% @md 50% @lg 45% @xl 32%
+
+        &:before
+          margin-right: 21px
+
+      ^&-text
+        text: $secondary 14px @md 16px
+
+    &-list
+      box: middle wrap
+
+    &-item
+      margin-bottom: 25px @md 45px
+      padding-right: 0 @md 50px
+      position: relative
+      right: @md -40px
+      width: 100% @md 50% @lg 45% @xl 40%
+      box:
+
+      &:before
+        content: ''
+        display: block
+        size: 62px
+        min-width: 62px
+        margin-right: 27px
+        border-radius: 42px
+        border: 3px $secondary solid
+        background: resolve('icons/ok-2.svg') no-repeat center
+
+    &-title
+      text: $secondary 20px 1 bold @xl 22px
+      margin-bottom: 5px
+
+    &-text
+      text: 14px @md 16px @xl 18px
+
+    &-btn
+      text-align: center
+
+  &__numbers
+    @extend .training-block
+    @extend .training-borders
+
+    &-list
+      box: center middle @lg-down wrap
+
+    &-item
+      size: 120px @md 140px @md 160px @xl 170px
+      min-width: 120px @md 140px @md 160px @xl 170px
+      border-radius: 50%
+      border: 2px $secondary solid
+      margin-bottom: 40px
+      box: center middle vertical
+      margin: 0 15px 10px 15px @md 0 25px 25px 25px
+      text-align: center
+
+    &-value
+      text: $primary 44px 1 @md 54px @xl 64px
+      margin-top: -15px
+      margin-bottom: 5px
+
+    &-title
+      text: #000 14px 1 @md 18px @xl 20px
+
+  &__cases
+    @extend .training-block
+
+    &-list
+      box: @lg space-between wrap
+
+    &-item
+      width: 100% @lg calc(50% - 50px)
+      margin-bottom: 35px @md 55px
+
+    &-desc
+      box: center
+      margin-bottom: 25px @md 30px
+
+    &-img
+      display: block
+      border-radius: 50%
+      margin-right: 24px @md 29px
+      size: 70px @md 100px @xl 150px
+
+    &-text
+      text: #000 16px 1.3 @md 18px @xl 22px
+
+    &-video
+      width: 100%
+      display: block
+
+      &-wrap
+        border-radius: 5px
+        background: #252525
+        overflow: hidden
+
+    &-btn
+      text-align: center
+      margin-top: -10px
+
+  &__why
+    @extend .training-block
+    background: #083d57
+
+    &-title
+      text: #fff
+
+    &-list
+      box: center middle
+      flex-wrap: @lg-down wrap
+      margin-top: -20px
+
+    &-img
+      border-radius: 50%
+      display: inline-block
+      margin-bottom: 6px
+      max-width: 100%
+
+    &-item
+      text: center
+      width: 50% @md 33%
+      padding: 0 25px @lg 0 5px
+      margin-bottom: 20px @lg 0
+
+    &-text
+      text: #fff 16px 1.3 @md 19px @lg 20px @xl 21px
+
+  &__who
+    @extend .training-block
+    background: #fcfcfc
+
+    &-item
+      box: top left
+      display: @md-down block
+      padding: 0 @xl 0 8%
+
+    &-img
+      display: block
+      margin-right: auto @md 30px
+      margin-left: auto
+      margin-bottom: 20px @md 0
+      max-width: 100%
+
+    &-name
+      text: $secondary 28px 1 bold center @md left @xl 30px
+
+    &-title
+      text: $secondary 16px 1.3 center @md 18px left @lg 20px @xl 22px
+      margin: 10px 0
+
+    &-text
+      text: #000 16px 1.3 @md 18px @lg 20px @xl 22px
+      text: @md-down center
+
+    &-btn
+      margin-top: 15px
+      text: @md-down center
+
+  &__plans
+    @extend .training-block
+    @extend .training-borders
+
+    &-list
+      box: middle left
+      flex-wrap: @md-down wrap
+
+    &-item
+      border: 3px #dddddd solid
+      border-radius: 9px
+      width: 100% @md 33% @lg 31% @xl 315px
+      max-width: 300px
+
+      & + &
+        margin-left: 0 @md 10px @lg 30px @xl 90px
+        margin-top: 15px @md 0
+
+      &:nth-child(2)
+
+        ^^&-title:before
+          background: resolve('icons/plan-star.png')
+          size: size('icons/plan-star.png')
+
+      &:nth-child(3)
+        border-color: #ccc59f
+
+        ^^&-title
+          border-color: #ccc59f
+
+          &:before
+            background: resolve('icons/plan-vip.png')
+            size: size('icons/plan-vip.png')
+            margin-top: -10px
+
+    &-content
+      padding: 20px 25px 33px
+
+    &-title
+      text: $secondary 18px 1 bold center @md 20px @xl 22px
+      height: 68px
+      border-bottom: 3px #dddddd solid
+      box: center middle
+
+      &:before
+        content: ''
+        display: inline-block
+        background: resolve('icons/plan-medal.png')
+        size: size('icons/plan-medal.png')
+        margin-right: 9px
+        margin-top: -2px
+        display: block @md none @xl block
+
+    &-places
+      text: #bebebe 14px center
+      margin-bottom: 25px
+      box: center middle
+
+      &:before
+        content: ''
+        display: inline-block
+        background: resolve('icons/plan-user.png')
+        background-size: contain
+        size: 19px 18px @lg size('icons/plan-user.png')
+        margin-right: 8px
+        margin-top: -2px
+
+    &-prop
+      text: #000 18px 1.3 @md 20px @xl 22px
+      box: center
+
+      & + &
+        margin-top: 20px
+
+      &:before
+        content: ''
+        display: inline-block
+        size: 19px @lg 27px
+        border: 3px $primary solid
+        border-width: 2px @lg 3px
+        border-radius: 50%
+        background: resolve('icons/plan-ok.svg') no-repeat 3px 4px
+        background-size: @lg-down 15px
+        margin-right: 8px
+        margin-top: -2px
+
+    &-prices
+      box: center space-between @md middle @xl space-between
+      flex-wrap: @xl-down wrap
+      margin: 27px 0
+
+    &-price
+      text: #000 20px 1.3 @md 24px @xl 27px
+
+      &-old
+        text: 14px @md 16px @xl 18px
+        position: relative
+        margin-bottom: -2px
+
+        &:after
+          content: ''
+          display: block
+          position: absolute calc(50% - 1px) 0 0 0
+          height: 0
+          border-bottom: 2px solid #ff0303
+
+    &-btn
+      text: center
+
+    &-timer
+      border: 3px #c60000 solid
+      border-radius: 9px
+      box-shadow: 0 0 18px 0 rgba(198, 0, 0, 0.35)
+      box: vertical center middle @md horizontal
+      padding: 25px @md 40px @lg 50px
+      margin-top: 50px
+
+      &-text
+        text: $secondary 20px bold @md 24px @xl 30px
+        margin-bottom: 10px @md 0
+
+      &-label
+        text: $secondary 16px bold @md 20px
+
+      &-elem
+        box:
+        margin-left: 0 @md 40px
+
+      &-value
+        text: #c60000 35px 1 bold @md 55px
+
+      &-separator
+        text: #c60000 35px 1 bold @md 55px
+        margin: 0 2px
+
+      &-item
+        text: center
+
+  &__guarantee
+    background: #f3f3f3
+    @extend .training-block
+
+    &-list
+      box:
+      flex-wrap: @md-down wrap
+
+    &-item
+      padding: 0 5%
+      margin-bottom: 20px @md 0
+
+      &:before
+        content: ''
+        display: block
+        background-size: contain
+        background-repeat: no-repeat
+
+      &:nth-child(1):before
+        background-image: resolve('icons/libra.png')
+        size: 50px @md size('icons/libra.png')
+
+      &:nth-child(2):before
+        background-image: resolve('icons/handshake.png')
+        size: 50px @md size('icons/handshake.png')
+
+    &-title
+      text: $secondary 20px 1.3 bold @md 24px @xl 27px
+      margin: 10px 0 7px
+
+    &-text
+      text: #000 16px @md 18px @lg 20px @xl 23px
+
+    &-btn
+      text: center
+      margin-top: 10px @md 50px
+
+  &__location
+    @extend .training-block
+    @extend .training-borders
+
+    &-list
+      box: @md center middle
+
+    &-item
+      box: center top
+      padding-left: 76px @lg 93px
+      position: relative
+      height: 56px @lg 76px
+
+      & + &
+        margin-top: 22px @lg 31px
+
+      &:before
+        content: ''
+        position: absolute 0 null 0 0
+        background-size: contain
+        background-repeat: no-repeat
+
+      &:nth-child(1):before
+        background-image: resolve('icons/location-map.png')
+        size: 53px @lg size('icons/location-map.png')
+
+      &:nth-child(2):before
+        background-image: resolve('icons/location-calendar.png')
+        size: 53px @lg size('icons/location-calendar.png')
+
+      &:nth-child(3):before
+        background-image: resolve('icons/location-time.png')
+        size: 53px @lg size('icons/location-time.png')
+
+    &-content
+      box: vertical
+
+    &-map
+      margin-right: 0 @md 60px @xl 80px
+      margin-bottom: 20px @md 0
+      width: 100% @md 45% @xl auto
+
+    &-img
+      max-width: 100%
+
+    &-title
+      text: #000 16px 1.2 @md 18px @lg 20px @xl 22px
+
+    &-mark
+      display: inline-block
+      text: bold
+
+    &-link
+      text: #000
+
+    &-btn
+      margin-top: 25px @lg 45px
+
+  &__faq
+    @extend .training-block
+
+    &-item
+
+      & + &
+        margin-top: 20px
+
+    &-title
+      text: 18px @md 20px @lg 25px @xl 30px
+      text-decoration: underline
+      text-align: left
+      @extend .btn-blank
+
+    &-wrap
+      max-height: 0
+      overflow: hidden
+      transition: .3s ease
+
+    &-text
+      text: 15px @md 16px @lg 18px @xl 20px
+      margin: 20px 0 20px
+
+  &__questions
+    @extend .training-block
+    background: #093c57
+
+    &-list
+      box: vertical center @md horizontal
+
+      &-form
+        box: center
+        flex-wrap: @lg-down wrap
+
+    &-text, &-link
+      text: #fff 18px 1.3 bold @md 20px @lg 22px @xl 29px
+
+    &-link
+      white-space: nowrap
+
+    &-info
+      margin-right: 0 @md 80px
+      text: center @md left
+      width: 100% @md 40%
+
+    &-form
+      width: 95% @md 50% @lg 670px
+      border: 3px #fff solid
+      margin-top: 20px @md 0
+      border-radius: 7px
+      padding: 20px
+
+    &-btn
+      margin-left: @lg 20px
+      margin-top: 20px
+      white-space: nowrap
+
+    .input-group
+      width: 100%
+
+.breadcrumbs
+  display: block @md flex
+
+  &-item
+    text: $primary 13px 1 @md 14px @xl 15px
+    text-decoration: none
+    display: inline-block
+
+    a&:hover
+      text-decoration: underline
+
+    & + &:before
+      content: '>'
+      margin: 0 5px
+      display: inline-block
+
+.tags
+  box: center top
+
+  &-item
+    text: $secondary center 14px 1 @md 16px @lg 17px @xl 18px
+    text-decoration: none
+
+    & + &
+      margin-left: 10px @lg 15px
+
+    &--active
+      background: $primary
+      text: #fff
+      padding: 7px 15px @lg 10px 15px
+      border-radius: 30px
+      box-shadow: 0 4px 16px rgba(0, 0, 0, 0.28)

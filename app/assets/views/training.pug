@@ -1,0 +1,337 @@
+include inc/head.pug
+include inc/header.pug
+
+section.training
+  .container
+    .breadcrumbs
+      a.breadcrumbs-item(href='#!') Магазин программ
+      .breadcrumbs-item Тренинг “Эффективный подбор персонала”
+
+  .training__info
+    .training__info-container.container
+      .training__info-tags.tags
+        a.tags-item(href='#!') Санкт-Петербург
+        a.tags-item.tags-item--active(href='#!') Москва
+        a.tags-item(href='#!') Сочи
+        a.tags-item(href='#!') Омск
+
+      .training__info-date 2-3 июля
+
+  .container
+    .training__banner
+      .training__banner-title Тренинг-практикум <div class="training__banner-title--wrap"><div class="training__banner-title--color">“Эффективный подбор персонала”</div></div>
+
+      .training__banner-btn.btn.btn--medium ПРИНЯТЬ УЧАСТИЕ В ТРЕНИНГЕ
+
+    .training__video-block
+      p.training__video-block-text Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse vulputate nisi quis turpis porta, sed placerat erat ornare. Maecenas iaculis dapibus dolor, id mollis urna iaculis vitae. Phasellus id pulvinar neque, ac dapibus ligula. Curabitur at posuere sapien, id convallis odio. Nullam eget malesuada ex. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec ac aliquam ante, eget malesuada tellus. Curabitur tincidunt libero sit amet nisi tempor condimentum vitae a ligula. Cras augue nisi, facilisis luctus vehicula ut, tempor id massa. Aliquam suscipit sodales eros at aliquet. Praesent tristique, leo quis pellentesque finibus, augue nunc luctus dolor, et feugiat diam mauris ac purus.
+
+      .training__video-block-wrap
+        iframe.training__video-block-iframe(width='560' height='285' src='https://www.youtube.com/embed/-MZgtCp8mtc' frameborder="0" allow='autoplay; encrypted-media' allowfullscreen)
+
+
+  .training__nav
+    .training__nav-container.container
+      each elem in trainingNav
+        a.training__nav-elem.scroll-to(href='#' + elem[1])= elem[0]
+        .training__nav-separator
+
+
+  .training__for-who
+    .container
+      .training__title.h2
+        .title-mark Кому стоит быть?
+
+      .training__for-who-tabs
+        a.training__for-who-tab.tabs--active(data-tabs='#for-who-tab-1') НАЧИНАЮЩИЙ<br> HR СПЕЦИАЛИСТ
+        a.training__for-who-tab(data-tabs='#for-who-tab-2') ОПЫТНЫЙ HR<br> СПЕЦИАЛИСТ
+        a.training__for-who-tab(data-tabs='#for-who-tab-3') РУКОВОДИТЕЛЬ
+
+      #for-who-tab-1.training__for-who-tab-content.tabs--active
+        img.training__for-who-img(src='https://dummyimage.com/390x290/bebebe/999')
+
+        .training__for-who-texts
+          p.training__for-who-text Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi tincidunt facilisis vestibulum. Nulla eget orci lacus. Morbi venenatis at sapien ac efficitur. Cras eget dui leo. Mauris ornare mi vel mi condimentum, sed tempor est lobortis. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Praesent et mi ex. Duis sit amet rhoncus augue.
+
+          p.training__for-who-text Curabitur finibus neque non aliquam pharetra. Proin vel viverra turpis, id porta diam. In eget leo pulvinar, interdum tellus in, imperdiet mauris. Nunc at sollicitudin mauris, hendrerit sodales velit. Fusce porta arcu et nisl interdum fringilla.
+
+      #for-who-tab-2.training__for-who-tab-content
+        img.training__for-who-img(src='https://dummyimage.com/390x290/bebebe/999')
+
+        .training__for-who-texts
+          p.training__for-who-text Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi tincidunt facilisis vestibulum. Nulla eget orci lacus. Morbi venenatis at sapien ac efficitur. Cras eget dui leo. Mauris ornare mi vel mi condimentum, sed tempor est lobortis. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Praesent et mi ex. Duis sit amet rhoncus augue. Curabitur finibus neque non aliquam pharetra. Proin vel viverra turpis, id porta diam. In eget leo pulvinar, interdum tellus in, imperdiet mauris. Nunc at sollicitudin mauris, hendrerit sodales velit. Fusce porta arcu et nisl interdum fringilla.
+
+      #for-who-tab-3.training__for-who-tab-content
+        img.training__for-who-img(src='https://dummyimage.com/390x290/bebebe/999')
+
+        .training__for-who-texts
+          p.training__for-who-text Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi tincidunt facilisis vestibulum. Nulla eget orci lacus. Morbi venenatis at sapien ac efficitur. Cras eget dui leo. Mauris ornare mi vel mi condimentum, sed tempor est lobortis. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Praesent et mi ex. Duis sit amet rhoncus augue.
+
+
+  #program.training__program
+    .container
+      .training__title.h2
+        .title-mark Программа
+        |  тренинга:
+
+      each i in [1, 2, 3]
+        .training__program-item
+          .training__program-title введение в контекстную рекламу
+          .training__program-content
+            .training__program-modul Модуль #{i}
+
+            .training__program-info
+              .training__program-info-title.training__program-info-title--first Содержание:
+
+              ul.training__program-info-list
+                li.training__program-info-list-item 1. Lorem ipsum dolor sit amet at justo.
+                li.training__program-info-list-item 2. Lorem ipsum dolor sit amet at justo.
+                li.training__program-info-list-item 3. Lorem ipsum dolor sit amet at justo.
+                li.training__program-info-list-item 4. Lorem ipsum dolor sit amet at justo.
+                li.training__program-info-list-item 5. Lorem ipsum dolor sit amet at justo.
+                li.training__program-info-list-item 6. Lorem ipsum dolor sit amet at justo.
+
+              .training__program-info-title.training__program-info-title--last Результат:
+
+              .training__program-info-list Lorem ipsum dolor sit amet, consectetur elit. Integer tortor felis, vehicula at feugiat
+
+            img.training__program-img(src='https://dummyimage.com/250x200/bebebe/999')
+
+
+  .training__pros
+    .container
+      .training__title.h2
+        | Что в
+        .title-mark результате?
+
+      .training__pros-list
+        each i in [1,2,3,4]
+          .training__pros-item
+            .training__pros--content
+              .training__pros-title Все будет классно
+              .training__pros-text Lorem ipsum dolor sit consectetur adipiscing Suspendisse vulputate
+
+      .training__pros-btn
+        a.btn.btn--medium(href='#!') записаться на тренинг!
+
+
+  .training__numbers
+    .container
+      .training__title.h2
+        | Тренинг 
+        .title-mark в цифрах
+
+      .training__numbers-list
+        each i in [1,2,3,4,5]
+          .training__numbers-item
+            .training__numbers-value #{i}
+            .training__numbers-title Дней работы
+
+
+  #sases.training__cases
+    .container
+      .training__title.h2
+        | Тренинг 
+        .title-mark в кейсах
+
+      .training__cases-list
+        each i in [1,2,3,4]
+          .training__cases-item
+            .training__cases-desc
+              img.training__cases-img(src='https://dummyimage.com/150x150/bebebe/999')
+              .training__cases-text Lorem ipsum dolor sit amet,  consectetur adipiscing elit. Suspendisse vulputate nisi quis porta, sed placerat erat ornare.
+
+            .training__cases-video-wrap
+              iframe.training__cases-video(width='560' height='285' src='https://www.youtube.com/embed/-MZgtCp8mtc' frameborder="0" allow='autoplay; encrypted-media' allowfullscreen)
+
+      .training__cases-btn
+        a.btn.btn--medium(href='#!') хочу также!
+
+
+  .training__why
+    .container
+      .training__why-title.training__title.h2
+        | Почему тренинг так 
+        .title-mark эффективен?
+
+      .training__why-list
+        each i in [1,2,3,4,5]
+          .training__why-item
+            img.training__why-img(src='https://dummyimage.com/138x138/bebebe/999')
+            .training__why-text Современная методика обучения
+
+
+  #coach.training__who
+    .container
+      .training__title.h2
+        .title-mark Кто ведет
+        |  тренинг?
+
+      .training__who-item
+        img.training__who-img(src='https://dummyimage.com/280x350/bebebe/999')
+
+        .training__who-content
+          .training__who-name Иванов Иван Иванович
+          .training__who-title Lorem ipsum dolor sit amet, consectetur adipiscing elit
+          .training__who-text Ut ac varius augue, id viverra dolor. Phasellus a mauris in nibh suscipit vulputate et ac ipsum. Nullam a nisi orci. Proin fermentum mi nec est blandit facilisis. Proin vulputate feugiat porttitor. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Duis sit amet interdum nulla. Praesent quis dictum ex. Pellentesque convallis ligula a pharetra tincidunt. Etiam bibendum at leo mattis vulputate. Maecenas tempus tincidunt dolor et mattis.
+          .training__who-btn
+            a.btn(href='#!') Скачать Резюме тренера
+
+
+  #price.training__plans
+    .container
+      .training__title.h2
+        .title-mark Стоимость
+        |  тренинга
+
+      .training__plans-list
+          .training__plans-item
+            .training__plans-title ПАКЕТ “СТАНДАРТ”
+            .training__plans-content
+              .training__plans-places Доступно 12 мест
+              each i in [1,2,3]
+                .training__plans-prop Тренинг
+              .training__plans-prices
+                .training__plans-price 15000 руб.
+                .training__plans-price-old 17500 руб.
+              .training__plans-btn
+                a.btn(href='#!') Принять участие
+
+          .training__plans-item
+            .training__plans-title ПАКЕТ “ПРЕМИУМ”
+            .training__plans-content
+              .training__plans-places Доступно 12 мест
+              each i in [1,2,3,4]
+                .training__plans-prop Тренинг
+              .training__plans-prices
+                .training__plans-price 15000 руб.
+                .training__plans-price-old 17500 руб.
+              .training__plans-btn
+                a.btn(href='#!') Принять участие
+
+          .training__plans-item
+            .training__plans-title ПАКЕТ “VIP”
+            .training__plans-content
+              .training__plans-places Доступно 12 мест
+              each i in [1,2,3,4,5]
+                .training__plans-prop Тренинг
+              .training__plans-prices
+                .training__plans-price 15000 руб.
+                .training__plans-price-old 17500 руб.
+              .training__plans-btn
+                a.btn(href='#!') Принять участие
+
+      .training__plans-timer
+        .training__plans-timer-text До повышения цены:
+
+        #timer.training__plans-timer-elem
+          .training__plans-timer-item
+            .training__plans-timer-value(data-timer='days')
+            .training__plans-timer-label Дня
+          .training__plans-timer-separator :
+          .training__plans-timer-item
+            .training__plans-timer-value(data-timer='hours')
+            .training__plans-timer-label Часа
+          .training__plans-timer-separator :
+          .training__plans-timer-item
+            .training__plans-timer-value(data-timer='minutes')
+            .training__plans-timer-label Минут
+          .training__plans-timer-separator :
+          .training__plans-timer-item
+            .training__plans-timer-value(data-timer='seconds')
+            .training__plans-timer-label Секунд
+
+
+  #guarantee.training__guarantee
+    .container
+      .training__title.h2
+        .title-mark Гарантия 200%
+
+      .training__guarantee-list
+        .training__guarantee-item
+          .training__guarantee-title По закону
+          .training__guarantee-text Consectetur adipiscing elit. Donec mollis nibh vulputate rhoncus commodo. Cras semper purus eu ipsum mattis sodales. Aenean hendrerit ac mi ut vestibulum. Nunc vel dolor in libero.
+
+        .training__guarantee-item
+          .training__guarantee-title Дополнительная расширенная гарантия
+          .training__guarantee-text Consectetur adipiscing elit. Donec mollis nibh vulputate rhoncus commodo. Cras semper purus eu ipsum mattis sodales. Aenean hendrerit ac mi ut vestibulum. Nunc vel dolor in libero.
+
+      .training__guarantee-btn
+        a.btn.btn--medium(href='#!') Выбрать вариант участия
+
+
+  .training__location
+    .container
+      .training__title.h2
+        .title-mark Где? Когда?
+
+      .training__location-list
+        .training__location-map
+          img.training__location-img(src='https://dummyimage.com/530x400/bebebe/999')
+
+        .training__location-content
+          .training__location-item
+            .training__location-desc
+              .training__location-title
+                .training__location-mark Москва
+                | /
+                a.training__location-link(href='#!') Выбрать другой город
+              .training__location-title Тверская 16, оф. 15
+
+          .training__location-item
+            .training__location-desc
+              .training__location-title
+                .training__location-mark 18-19 июня
+                | /
+                a.training__location-link(href='#!') Другие даты
+
+          .training__location-item
+            .training__location-desc
+              .training__location-title
+                .training__location-mark C 10:00 до 18:00
+
+          .training__location-btn
+            a.btn.btn--medium(href='#!') Принять участие!
+
+
+  #faq.training__faq
+    .container
+      .training__title.h2
+        | Важные 
+        .title-mark вопросы:
+
+      .training__faq-list
+        each i in faq
+          .training__faq-item
+            button.training__faq-title(data-accordion-one)= i
+            .training__faq-wrap
+              .training__faq-text Lorem ipsum dolor sit amet consectetur adipisicing elit. Rem repellat vero consequatur ut eveniet? Eius eaque delectus temporibus numquam laudantium voluptates placeat a quod aliquid, ad soluta nesciunt deserunt laboriosam consequatur iusto cupiditate ab quasi nostrum nam! Autem quibusdam, voluptas placeat soluta deserunt ad error. Magni dignissimos quasi harum! Perspiciatis, quos! Similique a tempora culpa asperiores explicabo obcaecati id inventore est quam vero? Ad officiis a tempora veritatis voluptatibus nemo magnam accusamus natus nam ullam. Odit repellat a eaque officia at! Pariatur, consequuntur odit id inventore itaque alias, neque accusamus excepturi aspernatur ea expedita dolore facere voluptatibus vero, molestiae quaerat!
+
+
+  .training__questions
+    .container
+      .training__questions-list
+        .training__questions-info
+          .training__questions-text Остались вопросы?
+          .training__questions-text Звоните: 
+            a.training__questions-link(href='tell:+88005005595') 8 (800) 500-55-95
+          .training__questions-text Пишите: 
+            a.training__questions-link(href='mailto:behr@behr.ru') BEHR@BEHR.ru
+
+        .training__questions-form
+          form(action='#')
+            .training__questions-text Хотите, Вам позвонит наш менеджер и проконсультирует?
+
+            .training__questions-list-form
+              .input-group.input-group--squared
+                input.training__questions-input.input-group__item(name='phone' placeholder='Ваш телефон')
+
+              .training__questions-btn
+                button.btn(type='submit') Заказать звонок!
+
+
+include inc/modal-recall.pug
+
+include inc/footer.pug
++footer
+include inc/foot.pug
